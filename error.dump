@@ -1,0 +1,7 @@
+Error: read EIO
+    at TTY.onStreamRead (node:internal/stream_base_commons:216:20)
+    at TTY.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -5,
+  code: 'EIO',
+  syscall: 'read'
+}
