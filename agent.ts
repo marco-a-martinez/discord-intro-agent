@@ -293,33 +293,26 @@ discordClient.on(Events.MessageCreate, async (message) => {
 });
 
 // Handle Slack events (messages)
-slackSocket.on('message', async ({ event, ack }) => {
-  await ack();
+slackSocket.on('slack_event', async ({ event, body, ack }) => {
+  if (ack) await ack();
   
   try {
-    // Handle DMs and channel messages where bot is mentioned
-    if (event.type === 'message' && !event.subtype) {
-      // Check if it's a DM (channel starts with D) or bot was mentioned
+    // Handle direct messages
+    if (event.type === 'message' && !event.subtype && !event.bot_id) {
+      // Check if it's a DM (channel starts with D)
       const isDM = event.channel?.startsWith('D');
-      const isMentioned = slackBotUserId && event.text?.includes(`<@${slackBotUserId}>`);
       
-      if (isDM || isMentioned) {
+      if (isDM) {
         await handleSlackMessage(event);
       }
     }
+    
+    // Handle app mentions
+    if (event.type === 'app_mention') {
+      await handleSlackMessage(event);
+    }
   } catch (error) {
-    console.error('Error handling Slack message:', error);
-  }
-});
-
-// Handle Slack app_mention events
-slackSocket.on('app_mention', async ({ event, ack }) => {
-  await ack();
-  
-  try {
-    await handleSlackMessage(event);
-  } catch (error) {
-    console.error('Error handling app mention:', error);
+    console.error('Error handling Slack event:', error);
   }
 });
 
