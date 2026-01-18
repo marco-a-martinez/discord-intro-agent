@@ -561,7 +561,7 @@ slackSocket.on("interactive", async ({ body, ack }) => {
   }
 });
 
-// Fetch historical messages from a channel
+// Fetch historical messages from a channel (2024 onwards only)
 async function fetchHistoricalMessages(channelId: string, channelName: string, limit: number = 100): Promise<number> {
   try {
     const channel = await discordClient.channels.fetch(channelId);
@@ -570,9 +570,13 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
     const textChannel = channel as any;
     const messages = await textChannel.messages.fetch({ limit });
     
+    // Only process messages from 2024 onwards
+    const cutoffDate = new Date('2024-01-01');
+    
     let processed = 0;
     for (const [, message] of messages) {
       if (message.author.bot) continue;
+      if (message.createdAt < cutoffDate) continue;
       
       try {
         const topic = await classifyMessage(message.content);
