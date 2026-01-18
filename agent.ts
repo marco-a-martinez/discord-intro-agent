@@ -292,23 +292,31 @@ discordClient.on(Events.MessageCreate, async (message) => {
   }
 });
 
-// Handle Slack events (messages)
-slackSocket.on('slack_event', async ({ event, body, ack }) => {
+// Handle Slack events (messages and mentions)
+slackSocket.on('slack_event', async (args: any) => {
+  const { event, ack } = args;
   if (ack) await ack();
   
+  // Skip if no event
+  if (!event) return;
+  
   try {
+    console.log(`\n📥 Slack event: ${event.type}`);
+    
     // Handle direct messages
     if (event.type === 'message' && !event.subtype && !event.bot_id) {
       // Check if it's a DM (channel starts with D)
       const isDM = event.channel?.startsWith('D');
       
       if (isDM) {
+        console.log('   Processing DM...');
         await handleSlackMessage(event);
       }
     }
     
     // Handle app mentions
     if (event.type === 'app_mention') {
+      console.log('   Processing mention...');
       await handleSlackMessage(event);
     }
   } catch (error) {
