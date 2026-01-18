@@ -5,7 +5,7 @@ import { Client, Events, GatewayIntentBits } from "discord.js";
 import { OLLAMA_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
 import { WebClient } from "@slack/web-api";
 import { SocketModeClient } from "@slack/socket-mode";
-import { getChannelConfig, channels } from "./channels";
+import { getChannelConfig, getChannels } from "./channels";
 import { classifyMessage, recordTopic, formatDailySummaryForSlack } from "./analytics";
 
 // Discord client
@@ -454,6 +454,7 @@ discordClient.once(Events.ClientReady, (readyClient) => {
   console.log("\n🎉 Discord connection ready!");
   console.log(`   Logged in as: ${readyClient.user.tag}`);
   
+  const channels = getChannels();
   const welcomeChannels = channels.filter(ch => ch.enabled && ch.responseType === "welcome");
   const analyticsChannels = channels.filter(ch => ch.enabled && ch.responseType === "analytics-only");
   
