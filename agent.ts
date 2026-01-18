@@ -561,8 +561,42 @@ slackSocket.on("interactive", async ({ body, ack }) => {
   }
 });
 
+// Fetch historical messages from a channel
+async function fetchHistoricalMessages(channelId: string, channelName: string, limit: number = 100): Promise<number> {
+  try {
+    const channel = await discordClient.channels.fetch(channelId);
+    if (!channel || !channel.isTextBased()) return 0;
+    
+    const textChannel = channel as any;
+    const messages = await textChannel.messages.fetch({ limit });
+    
+    let processed = 0;
+    for (const [, message] of messages) {
+      if (message.author.bot) continue;
+      
+      try {
+        const topic = await classifyMessage(message.content);
+        await recordMessage(
+          message.content,
+          message.author.username,
+          channelName,
+          topic
+        );
+        processed++;
+      } catch (error) {
+        // Skip messages that fail to process
+      }
+    }
+    
+    return processed;
+  } catch (error) {
+    console.error(`   Failed to fetch messages from #${channelName}:`, error);
+    return 0;
+  }
+}
+
 // Start everything
-discordClient.once(Events.ClientReady, (readyClient) => {
+discordClient.once(Events.ClientReady, async (readyClient) => {
   console.log("\n🎉 Discord connection ready!");
   console.log(`   Logged in as: ${readyClient.user.tag}`);
   
@@ -575,6 +609,15 @@ discordClient.once(Events.ClientReady, (readyClient) => {
   
   console.log(`\n   📊 Analytics tracking for ${analyticsChannels.length} channel(s):`);
   analyticsChannels.forEach(ch => console.log(`      - #${ch.name}`));
+  
+  // Fetch historical messages for analytics channels
+  console.log(`\n   📥 Loading historical messages...`);
+  for (const ch of analyticsChannels) {
+    if (!ch.channelId) continue;
+    const count = await fetchHistoricalMessages(ch.channelId, ch.name, 100);
+    console.log(`      - #${ch.name}: ${count} messages loaded`);
+  }
+  console.log(`   ✅ Historical data loaded!\n`);
 });
 
 slackSocket.on("ready", async () => {
