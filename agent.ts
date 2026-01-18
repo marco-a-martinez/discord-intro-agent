@@ -294,11 +294,17 @@ discordClient.on(Events.MessageCreate, async (message) => {
 
 // Handle Slack events (messages and mentions)
 slackSocket.on('slack_event', async (args: any) => {
-  const { event, ack } = args;
+  console.log('\n📥 Raw slack_event args:', JSON.stringify(args, null, 2).slice(0, 500));
+  
+  const event = args?.event || args?.body?.event;
+  const ack = args?.ack;
   if (ack) await ack();
   
   // Skip if no event
-  if (!event) return;
+  if (!event) {
+    console.log('   No event found in args');
+    return;
+  }
   
   try {
     console.log(`\n📥 Slack event: ${event.type}`);
