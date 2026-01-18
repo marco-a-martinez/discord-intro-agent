@@ -2,8 +2,11 @@ import { config } from 'dotenv';
 config({ path: '.env.local' });
 
 import { Client, Events, GatewayIntentBits } from "discord.js";
+import { OLLAMA_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
 import { WebClient } from "@slack/web-api";
 import { SocketModeClient } from "@slack/socket-mode";
+import { getChannelConfig, channels } from "./channels";
+import type { ResponseType, ChannelConfig } from "./channels";
 
 // Discord client
 const discordClient = new Client({
@@ -24,44 +27,22 @@ const slackSocket = new SocketModeClient({
 const pendingResponses = new Map();
 
 // AI-powered response generator using Ollama
-async function generateResponse(introMessage: string): Promise<string | null> {
+async function generateResponse(message: string): Promise<string | null> {
   try {
-    const response = await fetch('http://localhost:11434/api/generate', {
+    const prompt = COMMUNITY_RESPONSE_PROMPT.replace('{message}', message);
+    const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'phi3.5',
-        prompt: `You're Marco, a friendly and enthusiastic community manager welcoming someone to the Coder Discord server.
-
-THEIR INTRO:
-"${introMessage}"
-
-YOUR TASK:
-1. Start with ONE of these greetings (vary it each time):
-   - "Thanks for joining the server!"
-   - "Welcome to the Coder community!"
-   - "Welcome to the Coder server!"
-
-2. Then respond based on what they shared:
-   - If they introduced themselves with details (name, background, interests, goals): Acknowledge something specific they mentioned and ask ONE relevant follow-up question
-   - If they're asking about setup/technical help: Welcome them and point them toward getting help
-   - If they only said "hi" or "hello" with no details: Ask them to tell you more about themselves or what brought them here
-
-STYLE:
-- Be warm and genuine, not corporate
-- Keep it conversational and enthusiastic
-- 2-3 sentences max
-- One follow-up question only
-- Match their energy level
-
-YOUR RESPONSE:`,
+        model: OLLAMA_CONFIG.model,
+        prompt,
         stream: false,
       }),
     });
 
-    const data = await response.json();
+    const data = await response.json() as { response: string };
     return data.response.trim() || null;
   } catch (error) {
     console.error("Ollama error:", error);
@@ -79,10 +60,17 @@ discordClient.on(Events.MessageCreate, async (message) => {
   console.log(`  Is bot? ${message.author.bot}`);
 
   if (message.author.bot) return;
-  if (message.channelId !== process.env.DISCORD_CHANNEL_ID) return;
+  
+  // Check if this channel is configured and enabled
+  const channelConfig = getChannelConfig(message.channelId);
+  if (!channelConfig) return;
+  
   if (message.guildId !== process.env.DISCORD_GUILD_ID) return;
 
-  console.log(`\n📨 New intro from ${message.author.username}:`);
+  const isWelcome = channelConfig.responseType === "welcome";
+  const messageType = isWelcome ? "intro" : "message";
+  
+  console.log(`\n📨 New ${messageType} from ${message.author.username} in #${channelConfig.name}:`);
   console.log(`   "${message.content}"`);
 
   try {
@@ -111,7 +99,13 @@ discordClient.on(Events.MessageCreate, async (message) => {
       suggestedResponse: suggestedResponse,
       introContent: message.content,
       discordUrl: discordUrl,
+      channelConfig: channelConfig,
     });
+
+    // Build header based on response type
+    const headerText = isWelcome
+      ? (hasAiSuggestion ? "📬 New Discord Intro - AI Suggestion Ready" : "📬 New Discord Intro")
+      : (hasAiSuggestion ? "💬 New Discord Message - AI Suggestion Ready" : "💬 New Discord Message");
 
     // Build Slack blocks
     const blocks: any[] = [
@@ -119,7 +113,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
         type: "header",
         text: {
           type: "plain_text",
-          text: hasAiSuggestion ? "📬 New Discord Intro - AI Suggestion Ready" : "📬 New Discord Intro",
+          text: headerText,
           emoji: true,
         },
       },
@@ -132,7 +126,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
           },
           {
             type: "mrkdwn",
-            text: `*Channel:*\n#intros`,
+            text: `*Channel:*\n#${channelConfig.name}`,
           },
         ],
       },
@@ -141,7 +135,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `*📝 Their Intro:*\n${message.content}`,
+          text: `*📝 ${isWelcome ? "Their Intro" : "Message"}:*\n${message.content}`,
         },
         accessory: {
           type: "button",
@@ -460,16 +454,20 @@ slackSocket.on("interactive", async ({ body, ack }) => {
 discordClient.once(Events.ClientReady, (readyClient) => {
   console.log("\n🎉 Discord connection ready!");
   console.log(`   Logged in as: ${readyClient.user.tag}`);
-  console.log(`   Monitoring channel: #intros (${process.env.DISCORD_CHANNEL_ID})`);
+  const enabledChannels = channels.filter(ch => ch.enabled);
+  console.log(`   Monitoring ${enabledChannels.length} channel(s):`);
+  enabledChannels.forEach(ch => {
+    console.log(`     - #${ch.name} (${ch.responseType})`);
+  });
 });
 
 slackSocket.on("ready", () => {
   console.log("\n🎉 Slack connection ready!");
-  console.log("   Waiting for new intros...\n");
+  console.log("   Waiting for messages...\n");
 });
 
 (async () => {
-  console.log("🚀 Starting Discord Intro Agent...");
+  console.log("🚀 Starting Discord Community Agent...");
   console.log("   Using Ollama for AI responses (local & private)");
   console.log("   Connecting to Discord...");
   await discordClient.login(process.env.DISCORD_TOKEN);
