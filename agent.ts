@@ -6,7 +6,13 @@ import { OLLAMA_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
 import { WebClient } from "@slack/web-api";
 import { SocketModeClient } from "@slack/socket-mode";
 import { getChannelConfig, getChannels } from "./channels";
-import { classifyMessage, recordTopic, formatDailySummaryForSlack } from "./analytics";
+import { 
+  classifyMessage, 
+  recordMessage, 
+  formatDailySummaryForSlack,
+  formatTopHelpTopicsForSlack,
+  answerAnalyticsQuestion 
+} from "./analytics";
 
 // Discord client
 const discordClient = new Client({
@@ -25,6 +31,9 @@ const slackSocket = new SocketModeClient({
 
 // Store pending responses
 const pendingResponses = new Map();
+
+// Get bot user ID (set on startup)
+let slackBotUserId: string | null = null;
 
 // AI-powered response generator using Ollama
 async function generateResponse(message: string): Promise<string | null> {
@@ -50,6 +59,61 @@ async function generateResponse(message: string): Promise<string | null> {
   }
 }
 
+// Handle Slack messages (DMs and mentions)
+async function handleSlackMessage(event: any): Promise<void> {
+  // Ignore bot messages
+  if (event.bot_id || event.user === slackBotUserId) return;
+  
+  let messageText = event.text || '';
+  
+  // Remove bot mention from the message if present
+  if (slackBotUserId) {
+    messageText = messageText.replace(new RegExp(`<@${slackBotUserId}>`, 'g'), '').trim();
+  }
+  
+  if (!messageText) return;
+  
+  console.log(`\n💬 Slack message from user: "${messageText}"`);
+  
+  // Check for quick commands
+  const lowerMessage = messageText.toLowerCase();
+  
+  if (lowerMessage.includes('top help') || lowerMessage.includes('help topics') || lowerMessage.includes('trending')) {
+    // Return top help topics
+    const report = formatTopHelpTopicsForSlack();
+    await slackWeb.chat.postMessage({
+      channel: event.channel,
+      thread_ts: event.thread_ts || event.ts,
+      ...report,
+    });
+    console.log('   ✅ Sent top help topics report');
+    return;
+  }
+  
+  if (lowerMessage.includes('summary') || lowerMessage.includes('analytics') || lowerMessage.includes('report')) {
+    // Return daily summary
+    const report = formatDailySummaryForSlack();
+    await slackWeb.chat.postMessage({
+      channel: event.channel,
+      thread_ts: event.thread_ts || event.ts,
+      ...report,
+    });
+    console.log('   ✅ Sent analytics summary');
+    return;
+  }
+  
+  // For other questions, use AI to answer based on analytics data
+  console.log('   🤖 Generating AI response...');
+  const answer = await answerAnalyticsQuestion(messageText);
+  
+  await slackWeb.chat.postMessage({
+    channel: event.channel,
+    thread_ts: event.thread_ts || event.ts,
+    text: answer,
+  });
+  console.log('   ✅ Sent AI response');
+}
+
 // Handle Discord messages
 discordClient.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
@@ -62,11 +126,16 @@ discordClient.on(Events.MessageCreate, async (message) => {
 
   console.log(`\n📨 Message from ${message.author.username} in #${channelConfig.name}`);
 
-  // For analytics-only channels, just track the topic and return
+  // For analytics-only channels, track the topic with full details
   if (channelConfig.responseType === "analytics-only") {
     try {
       const topic = await classifyMessage(message.content);
-      recordTopic(channelConfig.name, topic);
+      await recordMessage(
+        message.content,
+        message.author.username,
+        channelConfig.name,
+        topic
+      );
       console.log(`   📊 Classified as: ${topic}`);
     } catch (error) {
       console.error("Analytics error:", error);
@@ -220,6 +289,37 @@ discordClient.on(Events.MessageCreate, async (message) => {
     console.log("\n📤 Sent to Slack!");
   } catch (error) {
     console.error("\n❌ Error processing intro:", error);
+  }
+});
+
+// Handle Slack events (messages)
+slackSocket.on('message', async ({ event, ack }) => {
+  await ack();
+  
+  try {
+    // Handle DMs and channel messages where bot is mentioned
+    if (event.type === 'message' && !event.subtype) {
+      // Check if it's a DM (channel starts with D) or bot was mentioned
+      const isDM = event.channel?.startsWith('D');
+      const isMentioned = slackBotUserId && event.text?.includes(`<@${slackBotUserId}>`);
+      
+      if (isDM || isMentioned) {
+        await handleSlackMessage(event);
+      }
+    }
+  } catch (error) {
+    console.error('Error handling Slack message:', error);
+  }
+});
+
+// Handle Slack app_mention events
+slackSocket.on('app_mention', async ({ event, ack }) => {
+  await ack();
+  
+  try {
+    await handleSlackMessage(event);
+  } catch (error) {
+    console.error('Error handling app mention:', error);
   }
 });
 
@@ -465,9 +565,20 @@ discordClient.once(Events.ClientReady, (readyClient) => {
   analyticsChannels.forEach(ch => console.log(`      - #${ch.name}`));
 });
 
-slackSocket.on("ready", () => {
+slackSocket.on("ready", async () => {
   console.log("\n🎉 Slack connection ready!");
-  console.log("   Waiting for messages...\n");
+  
+  // Get bot user ID for mention detection
+  try {
+    const authResult = await slackWeb.auth.test();
+    slackBotUserId = authResult.user_id as string;
+    console.log(`   Bot user ID: ${slackBotUserId}`);
+  } catch (error) {
+    console.error('Failed to get bot user ID:', error);
+  }
+  
+  console.log("   💬 You can now DM the bot or @mention it to ask about analytics!");
+  console.log("   Try: 'What are the top help topics?' or 'Show me a summary'\n");
 });
 
 (async () => {
