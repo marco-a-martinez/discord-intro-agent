@@ -1,4 +1,4 @@
-export type ResponseType = "welcome" | "engage";
+export type ResponseType = "welcome" | "analytics-only";
 
 export interface ChannelConfig {
   name: string;
@@ -17,55 +17,55 @@ export const channels: ChannelConfig[] = [
   {
     name: "random",
     channelId: process.env.DISCORD_CHANNEL_RANDOM || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "general",
     channelId: process.env.DISCORD_CHANNEL_GENERAL || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "feedback",
     channelId: process.env.DISCORD_CHANNEL_FEEDBACK || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "ai",
     channelId: process.env.DISCORD_CHANNEL_AI || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "blink",
     channelId: process.env.DISCORD_CHANNEL_BLINK || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "help",
     channelId: process.env.DISCORD_CHANNEL_HELP || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "contributing",
     channelId: process.env.DISCORD_CHANNEL_CONTRIBUTING || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "show-and-tell",
     channelId: process.env.DISCORD_CHANNEL_SHOW_AND_TELL || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
   {
     name: "education",
     channelId: process.env.DISCORD_CHANNEL_EDUCATION || "",
-    responseType: "engage",
+    responseType: "analytics-only",
     enabled: true,
   },
 ];

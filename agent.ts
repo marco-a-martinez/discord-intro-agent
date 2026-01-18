@@ -6,7 +6,7 @@ import { OLLAMA_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
 import { WebClient } from "@slack/web-api";
 import { SocketModeClient } from "@slack/socket-mode";
 import { getChannelConfig, channels } from "./channels";
-import type { ResponseType, ChannelConfig } from "./channels";
+import { classifyMessage, recordTopic, formatDailySummaryForSlack } from "./analytics";
 
 // Discord client
 const discordClient = new Client({
@@ -52,13 +52,6 @@ async function generateResponse(message: string): Promise<string | null> {
 
 // Handle Discord messages
 discordClient.on(Events.MessageCreate, async (message) => {
-  console.log(`\n[DEBUG] Message detected!`);
-  console.log(`  From: ${message.author.username}`);
-  console.log(`  Channel: ${message.channelId}`);
-  console.log(`  Guild: ${message.guildId}`);
-  console.log(`  Content: "${message.content}"`);
-  console.log(`  Is bot? ${message.author.bot}`);
-
   if (message.author.bot) return;
   
   // Check if this channel is configured and enabled
@@ -67,10 +60,21 @@ discordClient.on(Events.MessageCreate, async (message) => {
   
   if (message.guildId !== process.env.DISCORD_GUILD_ID) return;
 
-  const isWelcome = channelConfig.responseType === "welcome";
-  const messageType = isWelcome ? "intro" : "message";
-  
-  console.log(`\n📨 New ${messageType} from ${message.author.username} in #${channelConfig.name}:`);
+  console.log(`\n📨 Message from ${message.author.username} in #${channelConfig.name}`);
+
+  // For analytics-only channels, just track the topic and return
+  if (channelConfig.responseType === "analytics-only") {
+    try {
+      const topic = await classifyMessage(message.content);
+      recordTopic(channelConfig.name, topic);
+      console.log(`   📊 Classified as: ${topic}`);
+    } catch (error) {
+      console.error("Analytics error:", error);
+    }
+    return;
+  }
+
+  // Welcome flow for #intros channel only
   console.log(`   "${message.content}"`);
 
   try {
@@ -102,18 +106,13 @@ discordClient.on(Events.MessageCreate, async (message) => {
       channelConfig: channelConfig,
     });
 
-    // Build header based on response type
-    const headerText = isWelcome
-      ? (hasAiSuggestion ? "📬 New Discord Intro - AI Suggestion Ready" : "📬 New Discord Intro")
-      : (hasAiSuggestion ? "💬 New Discord Message - AI Suggestion Ready" : "💬 New Discord Message");
-
     // Build Slack blocks
     const blocks: any[] = [
       {
         type: "header",
         text: {
           type: "plain_text",
-          text: headerText,
+          text: hasAiSuggestion ? "📬 New Discord Intro - AI Suggestion Ready" : "📬 New Discord Intro",
           emoji: true,
         },
       },
@@ -126,7 +125,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
           },
           {
             type: "mrkdwn",
-            text: `*Channel:*\n#${channelConfig.name}`,
+            text: `*Channel:*\n#intros`,
           },
         ],
       },
@@ -135,7 +134,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `*📝 ${isWelcome ? "Their Intro" : "Message"}:*\n${message.content}`,
+          text: `*📝 Their Intro:*\n${message.content}`,
         },
         accessory: {
           type: "button",
@@ -454,11 +453,15 @@ slackSocket.on("interactive", async ({ body, ack }) => {
 discordClient.once(Events.ClientReady, (readyClient) => {
   console.log("\n🎉 Discord connection ready!");
   console.log(`   Logged in as: ${readyClient.user.tag}`);
-  const enabledChannels = channels.filter(ch => ch.enabled);
-  console.log(`   Monitoring ${enabledChannels.length} channel(s):`);
-  enabledChannels.forEach(ch => {
-    console.log(`     - #${ch.name} (${ch.responseType})`);
-  });
+  
+  const welcomeChannels = channels.filter(ch => ch.enabled && ch.responseType === "welcome");
+  const analyticsChannels = channels.filter(ch => ch.enabled && ch.responseType === "analytics-only");
+  
+  console.log(`\n   📬 Welcome responses enabled for ${welcomeChannels.length} channel(s):`);
+  welcomeChannels.forEach(ch => console.log(`      - #${ch.name}`));
+  
+  console.log(`\n   📊 Analytics tracking for ${analyticsChannels.length} channel(s):`);
+  analyticsChannels.forEach(ch => console.log(`      - #${ch.name}`));
 });
 
 slackSocket.on("ready", () => {
@@ -467,7 +470,7 @@ slackSocket.on("ready", () => {
 });
 
 (async () => {
-  console.log("🚀 Starting Discord Community Agent...");
+  console.log("🚀 Starting Discord Community Agent V2...");
   console.log("   Using Ollama for AI responses (local & private)");
   console.log("   Connecting to Discord...");
   await discordClient.login(process.env.DISCORD_TOKEN);
@@ -475,4 +478,3 @@ slackSocket.on("ready", () => {
   console.log("   Connecting to Slack...");
   await slackSocket.start();
 })();
-
