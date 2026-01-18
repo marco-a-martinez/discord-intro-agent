@@ -59,10 +59,27 @@ async function generateResponse(message: string): Promise<string | null> {
   }
 }
 
+// Track processed message IDs to prevent duplicates
+const processedSlackMessages = new Set<string>();
+
 // Handle Slack messages (DMs and mentions)
 async function handleSlackMessage(event: any): Promise<void> {
   // Ignore bot messages
-  if (event.bot_id || event.user === slackBotUserId) return;
+  if (event.bot_id) return;
+  
+  // Prevent duplicate processing (Slack sometimes sends retries)
+  const msgId = event.client_msg_id || event.ts;
+  if (processedSlackMessages.has(msgId)) {
+    console.log('   Skipping duplicate message');
+    return;
+  }
+  processedSlackMessages.add(msgId);
+  
+  // Clean up old message IDs (keep last 100)
+  if (processedSlackMessages.size > 100) {
+    const oldest = Array.from(processedSlackMessages).slice(0, 50);
+    oldest.forEach(id => processedSlackMessages.delete(id));
+  }
   
   let messageText = event.text || '';
   
@@ -294,35 +311,23 @@ discordClient.on(Events.MessageCreate, async (message) => {
 
 // Handle Slack events (messages and mentions)
 slackSocket.on('slack_event', async (args: any) => {
-  console.log('\n📥 Raw slack_event args:', JSON.stringify(args, null, 2).slice(0, 500));
-  
   const event = args?.event || args?.body?.event;
   const ack = args?.ack;
   if (ack) await ack();
   
-  // Skip if no event
-  if (!event) {
-    console.log('   No event found in args');
-    return;
-  }
+  if (!event) return;
   
   try {
-    console.log(`\n📥 Slack event: ${event.type}`);
-    
     // Handle direct messages
     if (event.type === 'message' && !event.subtype && !event.bot_id) {
-      // Check if it's a DM (channel starts with D)
       const isDM = event.channel?.startsWith('D');
-      
       if (isDM) {
-        console.log('   Processing DM...');
         await handleSlackMessage(event);
       }
     }
     
     // Handle app mentions
     if (event.type === 'app_mention') {
-      console.log('   Processing mention...');
       await handleSlackMessage(event);
     }
   } catch (error) {
