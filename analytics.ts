@@ -575,6 +575,85 @@ export function formatDailySummaryForSlack(): { text: string; blocks: object[] }
 }
 
 /**
+ * Format a combined summary + top topics report for Slack (default response)
+ */
+export function formatCombinedReportForSlack(): { text: string; blocks: object[] } {
+  const totals = getTotalCounts();
+  const totalMessages = Object.values(totals).reduce((a, b) => a + b, 0);
+  const topTopics = getTopHelpTopics(5);
+  const helpMessages = messages.filter(m => m.channel === 'help').length;
+  
+  if (totalMessages === 0) {
+    return {
+      text: 'No analytics data yet',
+      blocks: [
+        {
+          type: 'section',
+          text: { type: 'mrkdwn', text: "📊 *Analytics Report*\n\n_No data tracked yet. Messages will be analyzed as they come in._" },
+        },
+      ],
+    };
+  }
+
+  const topicEmojis: Record<Topic, string> = {
+    'support-request': '🆘',
+    'feature-request': '💡',
+    'bug-report': '🐛',
+    'general-discussion': '💬',
+    'praise': '🎉',
+    'question': '❓',
+  };
+
+  const topicLabels: Record<Topic, string> = {
+    'support-request': 'Support Requests',
+    'feature-request': 'Feature Requests',
+    'bug-report': 'Bug Reports',
+    'general-discussion': 'General Discussion',
+    'praise': 'Praise',
+    'question': 'Questions',
+  };
+
+  // Summary section
+  const summaryLines = (Object.keys(totals) as Topic[])
+    .filter(topic => totals[topic] > 0)
+    .sort((a, b) => totals[b] - totals[a])
+    .map(topic => `${topicEmojis[topic]} ${topicLabels[topic]}: *${totals[topic]}*`)
+    .join('\n');
+
+  // Top help topics section
+  const topicList = topTopics.length > 0
+    ? topTopics.map((t, i) => `${i + 1}. *${t.topic}* — ${t.count} request${t.count > 1 ? 's' : ''}`).join('\n')
+    : '_No help topics tracked yet_';
+
+  const blocks: object[] = [
+    {
+      type: 'header',
+      text: { type: 'plain_text', text: '📊 Discord Analytics Report', emoji: true },
+    },
+    {
+      type: 'section',
+      text: { type: 'mrkdwn', text: `*Summary* (${totalMessages} total messages)\n\n${summaryLines}` },
+    },
+    { type: 'divider' },
+    {
+      type: 'section',
+      text: { type: 'mrkdwn', text: `*🔥 Top 5 Help Topics* (${helpMessages} help requests)\n\n${topicList}` },
+    },
+    {
+      type: 'context',
+      elements: [
+        { type: 'mrkdwn', text: `_Ask me anything about the community data!_` },
+      ],
+    },
+  ];
+
+  return {
+    text: `Discord Analytics: ${totalMessages} messages, top topic: ${topTopics[0]?.topic || 'N/A'}`,
+    blocks,
+  };
+}
+
+/**
  * Reset all analytics data
  */
 export function resetAnalytics(): void {

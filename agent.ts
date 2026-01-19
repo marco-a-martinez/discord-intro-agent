@@ -11,6 +11,7 @@ import {
   recordMessage, 
   formatDailySummaryForSlack,
   formatTopHelpTopicsForSlack,
+  formatCombinedReportForSlack,
   answerAnalyticsQuestion,
   loadPersistedData,
   hasPersistedData 
@@ -94,43 +95,35 @@ async function handleSlackMessage(event: any): Promise<void> {
   
   console.log(`\n💬 Slack message from user: "${messageText}"`);
   
-  // Check for quick commands
   const lowerMessage = messageText.toLowerCase();
   
-  if (lowerMessage.includes('top help') || lowerMessage.includes('help topics') || lowerMessage.includes('trending')) {
-    // Return top help topics
-    const report = formatTopHelpTopicsForSlack();
+  // Check if it's a specific question (has question words or specific topics)
+  const isQuestion = /\b(what|why|how|when|which|who|can you|could you|tell me|show me|explain|describe)\b/i.test(messageText);
+  const isSpecificQuery = /\b(compare|trend|change|increase|decrease|most|least|average|between|during|week|month|yesterday|today)\b/i.test(messageText);
+  
+  if (isQuestion || isSpecificQuery) {
+    // Use AI to answer specific questions
+    console.log('   🤖 Generating AI response for question...');
+    const answer = await answerAnalyticsQuestion(messageText);
+    
     await slackWeb.chat.postMessage({
       channel: event.channel,
       thread_ts: event.thread_ts || event.ts,
-      ...report,
+      text: answer,
     });
-    console.log('   ✅ Sent top help topics report');
+    console.log('   ✅ Sent AI response');
     return;
   }
   
-  if (lowerMessage.includes('summary') || lowerMessage.includes('analytics') || lowerMessage.includes('report')) {
-    // Return daily summary
-    const report = formatDailySummaryForSlack();
-    await slackWeb.chat.postMessage({
-      channel: event.channel,
-      thread_ts: event.thread_ts || event.ts,
-      ...report,
-    });
-    console.log('   ✅ Sent analytics summary');
-    return;
-  }
-  
-  // For other questions, use AI to answer based on analytics data
-  console.log('   🤖 Generating AI response...');
-  const answer = await answerAnalyticsQuestion(messageText);
-  
+  // Default: show combined summary + top 5 topics
+  console.log('   📊 Sending combined report...');
+  const report = formatCombinedReportForSlack();
   await slackWeb.chat.postMessage({
     channel: event.channel,
     thread_ts: event.thread_ts || event.ts,
-    text: answer,
+    ...report,
   });
-  console.log('   ✅ Sent AI response');
+  console.log('   ✅ Sent combined report');
 }
 
 // Handle Discord messages
