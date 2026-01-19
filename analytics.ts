@@ -37,7 +37,7 @@ export interface ConversationMessage {
 }
 
 const conversations = new Map<string, ConversationMessage[]>();
-const MAX_CONVERSATION_AGE_HOURS = 24; // Clear conversations older than 24 hours
+const MAX_CONVERSATION_AGE_HOURS = 24 * 7; // Clear conversations older than 7 days
 
 /**
  * Load persisted data from disk
