@@ -563,9 +563,13 @@ slackSocket.on("interactive", async ({ body, ack }) => {
 
 // Fetch historical messages from a channel (2024 onwards only)
 async function fetchHistoricalMessages(channelId: string, channelName: string, limit: number = 100): Promise<number> {
+  console.log(`         [Debug] Fetching channel ${channelName} (ID: ${channelId})`);
   try {
     const channel = await discordClient.channels.fetch(channelId);
-    if (!channel) return 0;
+    if (!channel) {
+      console.log(`         [Debug] Channel ${channelName} returned null`);
+      return 0;
+    }
     
     console.log(`         [Debug] Channel ${channelName} type: ${channel.type}`);
     
