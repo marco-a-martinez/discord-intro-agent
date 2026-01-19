@@ -500,7 +500,28 @@ ${helpMessages.slice(-5).map(m => `- "${m.content.slice(0, 100)}${m.content.leng
         prompt: `${dataContext}${conversationContext}
 CURRENT USER QUESTION: ${question}
 
-Provide a helpful, concise answer based on the data above. Use the conversation history to understand context and follow-up questions. If the user refers to something mentioned earlier (like "the first one" or "tell me more"), use the conversation history to understand what they mean. Keep your response under 200 words.`,
+Provide a helpful answer based on the data above. Use the conversation history to understand context and follow-up questions.
+
+FORMATTING RULES:
+- Always structure your response with clear sections
+- Use this format for lists:
+  1.) First item
+  2.) Second item
+  3.) Third item
+- Do NOT use asterisks (*) for bullet points
+- When listing top topics, always number them 1.) 2.) 3.) etc.
+- Start with a brief summary, then list specific items
+
+Example format:
+Summary:
+[Brief 1-2 sentence overview]
+
+Top Issues:
+1.) Issue name (X requests)
+2.) Issue name (X requests)
+3.) Issue name (X requests)
+
+Keep your response concise and well-organized.`,
         stream: false,
       }),
     });
