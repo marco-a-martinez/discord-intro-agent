@@ -511,7 +511,7 @@ FORMATTING RULES:
 
 Your response must follow this EXACT format:
 Summary:
-[1-2 sentence overview here]
+[3-4 sentences with specific details: mention the total number of messages, which channels are most active, what types of issues dominate, and any notable patterns or trends you see in the data]
 
 Top 5:
 1.) Topic name (X requests)
