@@ -182,18 +182,38 @@ export async function classifyMessage(content: string): Promise<Topic> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: OLLAMA_CONFIG.model,
-        prompt: `Classify the following message into exactly ONE of these categories:
-- support-request: User needs help with setup, configuration, or troubleshooting
-- feature-request: User is suggesting a new feature or improvement
-- bug-report: User is reporting something broken or not working correctly
-- general-discussion: Casual conversation, intros, or off-topic chat
-- praise: User is expressing appreciation or positive feedback
-- question: User is asking a question that isn't support-related
+        prompt: `You are a message classifier. Classify the message into exactly ONE category.
 
-MESSAGE:
+VALID CATEGORIES (you MUST respond with one of these exact values):
+- support-request
+- feature-request
+- bug-report
+- general-discussion
+- praise
+- question
+
+CATEGORY DEFINITIONS:
+- support-request: Help with setup, configuration, installation, or troubleshooting
+- feature-request: Suggesting new features, enhancements, or improvements
+- bug-report: Reporting broken functionality, errors, or unexpected behavior
+- general-discussion: Casual conversation, introductions, greetings, or off-topic
+- praise: Expressing thanks, appreciation, or positive feedback
+- question: Asking about how something works (not troubleshooting)
+
+EXAMPLES:
+"How do I install Coder?" -> support-request
+"Can you add dark mode?" -> feature-request
+"The login page crashes on Safari" -> bug-report
+"Hey everyone, I'm new here!" -> general-discussion
+"Thanks, this is amazing!" -> praise
+"What does this feature do?" -> question
+"Hi, I'm having trouble connecting" -> support-request
+"Love the new update!" -> praise
+
+MESSAGE TO CLASSIFY:
 "${content}"
 
-Respond with ONLY the category name, nothing else.`,
+RESPOND WITH ONLY ONE OF: support-request, feature-request, bug-report, general-discussion, praise, question`,
         stream: false,
       }),
     });

@@ -42,8 +42,8 @@ const pendingResponses = new Map();
 // Get bot user ID (set on startup)
 let slackBotUserId: string | null = null;
 
-// Slack channel for intro notifications (falls back to user DM if not set)
-const SLACK_INTRO_CHANNEL = process.env.SLACK_INTRO_CHANNEL || process.env.YOUR_SLACK_USER_ID;
+// Slack channel for intro notifications
+const SLACK_INTRO_CHANNEL = process.env.SLACK_INTRO_CHANNEL;
 
 // AI-powered response generator using Ollama
 async function generateResponse(message: string): Promise<string | null> {
@@ -321,21 +321,37 @@ discordClient.on(Events.MessageCreate, async (message) => {
 
 // Handle Slack events (messages and mentions)
 slackSocket.on('slack_event', async (args: any) => {
+  // Wrap entire handler in try-catch for safety
   try {
-    const ack = args?.ack;
-    if (ack) await ack();
-  } catch (e) {
-    // ack might not be a function in some event types
-  }
-  
-  const event = args?.event || args?.body?.event || args;
-  
-  if (!event || !event.type) {
-    // Some events don't have the structure we expect, skip them
-    return;
-  }
-  
-  try {
+    // Acknowledge the event if possible
+    try {
+      const ack = args?.ack;
+      if (typeof ack === 'function') await ack();
+    } catch (ackError) {
+      // ack might not be a function in some event types, ignore silently
+    }
+    
+    // Defensive extraction of event object
+    const event = args?.event || args?.body?.event || args;
+    
+    // Validate event structure before proceeding
+    if (!event) {
+      console.debug('slack_event: Received event with no event object, skipping');
+      return;
+    }
+    
+    if (typeof event !== 'object') {
+      console.debug(`slack_event: Event is not an object (${typeof event}), skipping`);
+      return;
+    }
+    
+    if (!event.type) {
+      console.debug('slack_event: Event missing type property, skipping', { 
+        keys: Object.keys(event).slice(0, 5) 
+      });
+      return;
+    }
+    
     // Handle direct messages
     if (event.type === 'message' && !event.subtype && !event.bot_id) {
       const isDM = event.channel?.startsWith('D');
@@ -352,6 +368,17 @@ slackSocket.on('slack_event', async (args: any) => {
     }
   } catch (error) {
     console.error('Error handling Slack event:', error);
+    // Log additional context for debugging
+    try {
+      console.error('Event args snapshot:', JSON.stringify({
+        hasArgs: !!args,
+        hasEvent: !!args?.event,
+        hasBodyEvent: !!args?.body?.event,
+        eventType: args?.event?.type || args?.body?.event?.type || 'unknown'
+      }));
+    } catch {
+      // Ignore serialization errors
+    }
   }
 });
 
@@ -774,7 +801,7 @@ slackSocket.on("ready", async () => {
 
 // Health check - posts status to Slack every hour
 const HEALTH_CHECK_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
-const HEALTH_CHECK_CHANNEL = process.env.SLACK_HEALTH_CHECK_CHANNEL || process.env.YOUR_SLACK_USER_ID;
+const HEALTH_CHECK_CHANNEL = process.env.SLACK_HEALTH_CHECK_CHANNEL;
 
 async function sendHealthCheck(): Promise<void> {
   if (!HEALTH_CHECK_CHANNEL) return;
