@@ -17,7 +17,8 @@ import {
   loadPersistedData,
   hasPersistedData,
   clearConversation,
-  addToConversation
+  addToConversation,
+  getAllMessages
 } from "./analytics";
 
 // Discord client
@@ -771,6 +772,29 @@ slackSocket.on("ready", async () => {
   console.log("   Try: 'What are the top help topics?' or 'Show me a summary'\n");
 });
 
+// Health check - posts status to Slack every hour
+const HEALTH_CHECK_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
+const HEALTH_CHECK_CHANNEL = process.env.SLACK_HEALTH_CHECK_CHANNEL || process.env.YOUR_SLACK_USER_ID;
+
+async function sendHealthCheck(): Promise<void> {
+  if (!HEALTH_CHECK_CHANNEL) return;
+  
+  const messageCount = getAllMessages().length;
+  const uptime = process.uptime();
+  const uptimeHours = Math.floor(uptime / 3600);
+  const uptimeMinutes = Math.floor((uptime % 3600) / 60);
+  
+  try {
+    await slackWeb.chat.postMessage({
+      channel: HEALTH_CHECK_CHANNEL,
+      text: `✅ Discord bot is running | ${messageCount} messages tracked | Uptime: ${uptimeHours}h ${uptimeMinutes}m`,
+    });
+    console.log(`💓 Health check sent (${messageCount} messages, uptime: ${uptimeHours}h ${uptimeMinutes}m)`);
+  } catch (error) {
+    console.error('Failed to send health check:', error);
+  }
+}
+
 (async () => {
   console.log("🚀 Starting Discord Community Agent V2...");
   console.log("   Using Ollama for AI responses (local & private)");
@@ -783,4 +807,12 @@ slackSocket.on("ready", async () => {
 
   console.log("   Connecting to Slack...");
   await slackSocket.start();
+  
+  // Start health check interval
+  if (HEALTH_CHECK_CHANNEL) {
+    console.log(`   💓 Health checks enabled (every hour to ${HEALTH_CHECK_CHANNEL})`);
+    setInterval(sendHealthCheck, HEALTH_CHECK_INTERVAL_MS);
+    // Send initial health check after 10 seconds (let connections stabilize)
+    setTimeout(sendHealthCheck, 10000);
+  }
 })();
