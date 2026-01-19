@@ -14,7 +14,9 @@ import {
   formatCombinedReportForSlack,
   answerAnalyticsQuestion,
   loadPersistedData,
-  hasPersistedData 
+  hasPersistedData,
+  clearConversation,
+  addToConversation
 } from "./analytics";
 
 // Discord client
@@ -96,15 +98,28 @@ async function handleSlackMessage(event: any): Promise<void> {
   console.log(`\n💬 Slack message from user: "${messageText}"`);
   
   const lowerMessage = messageText.toLowerCase();
+  const userId = event.user || event.channel;
+  
+  // Check for clear/reset conversation command
+  if (lowerMessage.includes('forget') || lowerMessage.includes('clear history') || lowerMessage.includes('start over') || lowerMessage.includes('new conversation')) {
+    clearConversation(userId);
+    await slackWeb.chat.postMessage({
+      channel: event.channel,
+      thread_ts: event.thread_ts || event.ts,
+      text: "🗑️ Conversation history cleared! I've forgotten our previous chat. What would you like to know?",
+    });
+    console.log(`   ✅ Cleared conversation for user ${userId}`);
+    return;
+  }
   
   // Check if it's a specific question (has question words or specific topics)
   const isQuestion = /\b(what|why|how|when|which|who|can you|could you|tell me|show me|explain|describe)\b/i.test(messageText);
   const isSpecificQuery = /\b(compare|trend|change|increase|decrease|most|least|average|between|during|week|month|yesterday|today)\b/i.test(messageText);
   
   if (isQuestion || isSpecificQuery) {
-    // Use AI to answer specific questions
-    console.log('   🤖 Generating AI response for question...');
-    const answer = await answerAnalyticsQuestion(messageText);
+    // Use AI to answer specific questions (with conversation memory)
+    console.log(`   🤖 Generating AI response for question (user: ${userId})...`);
+    const answer = await answerAnalyticsQuestion(messageText, userId);
     
     await slackWeb.chat.postMessage({
       channel: event.channel,

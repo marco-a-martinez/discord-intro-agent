@@ -23,10 +23,21 @@ export interface TrackedMessage {
 
 // Persistence file path
 const DATA_FILE = path.join(process.cwd(), 'analytics-data.json');
+const CONVERSATIONS_FILE = path.join(process.cwd(), 'conversations-data.json');
 
 // In-memory storage
 let messages: TrackedMessage[] = [];
 const topicCounts = new Map<string, Map<Topic, number>>();
+
+// Conversation memory - stores full history per user
+export interface ConversationMessage {
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+}
+
+const conversations = new Map<string, ConversationMessage[]>();
+const MAX_CONVERSATION_AGE_HOURS = 24; // Clear conversations older than 24 hours
 
 /**
  * Load persisted data from disk
@@ -52,6 +63,19 @@ export function loadPersistedData(): void {
       
       console.log(`   📂 Loaded ${messages.length} messages from disk`);
     }
+    
+    // Load conversations
+    if (fs.existsSync(CONVERSATIONS_FILE)) {
+      const convData = JSON.parse(fs.readFileSync(CONVERSATIONS_FILE, 'utf-8'));
+      for (const [userId, msgs] of Object.entries(convData.conversations || {})) {
+        const parsedMsgs = (msgs as any[]).map((m: any) => ({
+          ...m,
+          timestamp: new Date(m.timestamp),
+        }));
+        conversations.set(userId, parsedMsgs);
+      }
+      console.log(`   💬 Loaded ${conversations.size} conversation histories`);
+    }
   } catch (error) {
     console.error('Failed to load persisted data:', error);
   }
@@ -65,7 +89,7 @@ export function hasPersistedData(): boolean {
 }
 
 /**
- * Save data to disk
+ * Save analytics data to disk
  */
 function saveData(): void {
   try {
@@ -75,11 +99,75 @@ function saveData(): void {
   }
 }
 
+/**
+ * Save conversations to disk
+ */
+function saveConversations(): void {
+  try {
+    const convObj: Record<string, ConversationMessage[]> = {};
+    conversations.forEach((msgs, oderId) => {
+      convObj[oderId] = msgs;
+    });
+    fs.writeFileSync(CONVERSATIONS_FILE, JSON.stringify({ conversations: convObj }, null, 2));
+  } catch (error) {
+    console.error('Failed to save conversations:', error);
+  }
+}
+
 // Debounce saves to avoid writing too frequently
 let saveTimeout: NodeJS.Timeout | null = null;
 function debouncedSave(): void {
   if (saveTimeout) clearTimeout(saveTimeout);
   saveTimeout = setTimeout(saveData, 5000); // Save 5 seconds after last change
+}
+
+let convSaveTimeout: NodeJS.Timeout | null = null;
+function debouncedSaveConversations(): void {
+  if (convSaveTimeout) clearTimeout(convSaveTimeout);
+  convSaveTimeout = setTimeout(saveConversations, 2000);
+}
+
+/**
+ * Add a message to a user's conversation history
+ */
+export function addToConversation(userId: string, role: 'user' | 'assistant', content: string): void {
+  if (!conversations.has(userId)) {
+    conversations.set(userId, []);
+  }
+  
+  const history = conversations.get(userId)!;
+  
+  // Clean up old messages (older than MAX_CONVERSATION_AGE_HOURS)
+  const cutoff = new Date(Date.now() - MAX_CONVERSATION_AGE_HOURS * 60 * 60 * 1000);
+  const filtered = history.filter(m => m.timestamp > cutoff);
+  
+  filtered.push({
+    role,
+    content,
+    timestamp: new Date(),
+  });
+  
+  conversations.set(userId, filtered);
+  debouncedSaveConversations();
+}
+
+/**
+ * Get a user's conversation history
+ */
+export function getConversationHistory(userId: string): ConversationMessage[] {
+  const history = conversations.get(userId) || [];
+  
+  // Filter out old messages
+  const cutoff = new Date(Date.now() - MAX_CONVERSATION_AGE_HOURS * 60 * 60 * 1000);
+  return history.filter(m => m.timestamp > cutoff);
+}
+
+/**
+ * Clear a user's conversation history
+ */
+export function clearConversation(userId: string): void {
+  conversations.delete(userId);
+  debouncedSaveConversations();
 }
 
 /**
@@ -350,17 +438,27 @@ export function getTotalCounts(): Record<Topic, number> {
 }
 
 /**
- * Answer a question about analytics using AI
+ * Answer a question about analytics using AI (with conversation memory)
  */
-export async function answerAnalyticsQuestion(question: string): Promise<string> {
+export async function answerAnalyticsQuestion(question: string, userId?: string): Promise<string> {
   const topHelpTopics = getTopHelpTopics(10);
   const summary = getTopicSummary();
   const totals = getTotalCounts();
   const totalMessages = messages.length;
   const helpMessages = messages.filter(m => m.channel === 'help');
   
-  // Build context for the AI
-  const context = `
+  // Get conversation history if userId provided
+  const conversationHistory = userId ? getConversationHistory(userId) : [];
+  
+  // Build conversation context
+  const conversationContext = conversationHistory.length > 0
+    ? `\nPREVIOUS CONVERSATION:\n${conversationHistory.map(m => 
+        `${m.role.toUpperCase()}: ${m.content}`
+      ).join('\n')}\n`
+    : '';
+  
+  // Build data context for the AI
+  const dataContext = `
 You are an analytics assistant for a Discord community bot. Answer questions based on this data:
 
 TOTAL MESSAGES TRACKED: ${totalMessages}
@@ -388,23 +486,34 @@ RECENT HELP REQUESTS (last 5):
 ${helpMessages.slice(-5).map(m => `- "${m.content.slice(0, 100)}${m.content.length > 100 ? '...' : ''}" (topic: ${m.helpTopic || 'unknown'})`).join('\n') || 'None yet'}
 `;
 
+  // Store user's question in conversation history
+  if (userId) {
+    addToConversation(userId, 'user', question);
+  }
+
   try {
     const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: OLLAMA_CONFIG.model,
-        prompt: `${context}
+        prompt: `${dataContext}${conversationContext}
+CURRENT USER QUESTION: ${question}
 
-USER QUESTION: ${question}
-
-Provide a helpful, concise answer based on the data above. If there's not enough data yet, say so. Keep your response under 200 words.`,
+Provide a helpful, concise answer based on the data above. Use the conversation history to understand context and follow-up questions. If the user refers to something mentioned earlier (like "the first one" or "tell me more"), use the conversation history to understand what they mean. Keep your response under 200 words.`,
         stream: false,
       }),
     });
 
     const data = await response.json() as { response: string };
-    return data.response?.trim() || "I couldn't generate a response. Try again later.";
+    const answer = data.response?.trim() || "I couldn't generate a response. Try again later.";
+    
+    // Store assistant's response in conversation history
+    if (userId) {
+      addToConversation(userId, 'assistant', answer);
+    }
+    
+    return answer;
   } catch (error) {
     console.error('Analytics question error:', error);
     return "Sorry, I'm having trouble connecting to the AI. Please try again later.";
