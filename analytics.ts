@@ -503,25 +503,24 @@ CURRENT USER QUESTION: ${question}
 Provide a helpful answer based on the data above. Use the conversation history to understand context and follow-up questions.
 
 FORMATTING RULES:
-- Always structure your response with clear sections
-- Use this format for lists:
-  1.) First item
-  2.) Second item
-  3.) Third item
+- Do NOT add any leading spaces before lines
+- Start your response directly with "Summary:" (no space before it)
+- Use numbered lists like: 1.) 2.) 3.)
 - Do NOT use asterisks (*) for bullet points
-- When listing top topics, always number them 1.) 2.) 3.) etc.
-- Start with a brief summary, then list specific items
+- Structure: Summary section, then Top 5 section
 
-Example format:
+Your response must follow this EXACT format:
 Summary:
-[Brief 1-2 sentence overview]
+[1-2 sentence overview here]
 
-Top Issues:
-1.) Issue name (X requests)
-2.) Issue name (X requests)
-3.) Issue name (X requests)
+Top 5:
+1.) Topic name (X requests)
+2.) Topic name (X requests)
+3.) Topic name (X requests)
+4.) Topic name (X requests)
+5.) Topic name (X requests)
 
-Keep your response concise and well-organized.`,
+Start your response with the word Summary immediately, no spaces or other text before it.`,
         stream: false,
       }),
     });
