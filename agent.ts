@@ -565,15 +565,55 @@ slackSocket.on("interactive", async ({ body, ack }) => {
 async function fetchHistoricalMessages(channelId: string, channelName: string, limit: number = 100): Promise<number> {
   try {
     const channel = await discordClient.channels.fetch(channelId);
-    if (!channel || !channel.isTextBased()) return 0;
+    if (!channel) return 0;
+    
+    const cutoffDate = new Date('2024-01-01');
+    let processed = 0;
+    
+    // Handle forum channels (like #help)
+    if (channel.type === 15) { // GuildForum
+      const forumChannel = channel as any;
+      const threads = await forumChannel.threads.fetchActive();
+      const archivedThreads = await forumChannel.threads.fetchArchived({ limit: 20 });
+      
+      const allThreads = [...threads.threads.values(), ...archivedThreads.threads.values()];
+      
+      for (const thread of allThreads) {
+        if (thread.createdAt && thread.createdAt < cutoffDate) continue;
+        
+        try {
+          const messages = await thread.messages.fetch({ limit: 10 });
+          for (const [, message] of messages) {
+            if (message.author.bot) continue;
+            if (message.createdAt < cutoffDate) continue;
+            
+            try {
+              const topic = await classifyMessage(message.content);
+              await recordMessage(
+                message.content,
+                message.author.username,
+                channelName,
+                topic
+              );
+              processed++;
+            } catch (error) {
+              // Skip messages that fail to process
+            }
+          }
+        } catch (error) {
+          // Skip threads that fail to fetch
+        }
+      }
+      
+      return processed;
+    }
+    
+    // Handle regular text channels
+    if (!channel.isTextBased()) return 0;
     
     const textChannel = channel as any;
     const messages = await textChannel.messages.fetch({ limit });
     
-    // Only process messages from 2024 onwards
-    const cutoffDate = new Date('2024-01-01');
-    
-    let processed = 0;
     for (const [, message] of messages) {
       if (message.author.bot) continue;
       if (message.createdAt < cutoffDate) continue;
