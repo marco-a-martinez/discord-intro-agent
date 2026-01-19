@@ -12,6 +12,7 @@ import {
   formatDailySummaryForSlack,
   formatTopHelpTopicsForSlack,
   formatCombinedReportForSlack,
+  formatTopThreadsForSlack,
   answerAnalyticsQuestion,
   loadPersistedData,
   hasPersistedData,
@@ -112,21 +113,16 @@ async function handleSlackMessage(event: any): Promise<void> {
     return;
   }
   
-  // Check if it's a specific question (has question words or specific topics)
-  const isQuestion = /\b(what|why|how|when|which|who|can you|could you|tell me|show me|explain|describe)\b/i.test(messageText);
-  const isSpecificQuery = /\b(compare|trend|change|increase|decrease|most|least|average|between|during|week|month|yesterday|today)\b/i.test(messageText);
-  
-  if (isQuestion || isSpecificQuery) {
-    // Use AI to answer specific questions (with conversation memory)
-    console.log(`   🤖 Generating AI response for question (user: ${userId})...`);
-    const answer = await answerAnalyticsQuestion(messageText, userId);
-    
+  // Check for top threads request
+  if (lowerMessage.includes('thread') || lowerMessage.includes('top help') || lowerMessage.includes('active') || lowerMessage.includes('popular')) {
+    const guildId = process.env.DISCORD_GUILD_ID || '';
+    const report = formatTopThreadsForSlack(guildId);
     await slackWeb.chat.postMessage({
       channel: event.channel,
       thread_ts: event.thread_ts || event.ts,
-      text: answer,
+      ...report,
     });
-    console.log('   ✅ Sent AI response');
+    console.log('   ✅ Sent top threads report');
     return;
   }
   

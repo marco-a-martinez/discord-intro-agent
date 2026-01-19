@@ -416,6 +416,52 @@ export function getTopThreads(minReplies: number = 5, limit: number = 5): { thre
 }
 
 /**
+ * Format top threads for Slack with Discord links
+ */
+export function formatTopThreadsForSlack(guildId: string): { text: string; blocks: object[] } {
+  const topThreads = getTopThreads(5, 5);
+  
+  if (topThreads.length === 0) {
+    return {
+      text: 'No threads with 5+ replies yet',
+      blocks: [
+        {
+          type: 'section',
+          text: { type: 'mrkdwn', text: "📊 *Top Help Threads*\n\n_No threads with 5+ replies yet. Data will appear as discussions grow._" },
+        },
+      ],
+    };
+  }
+  
+  const threadList = topThreads
+    .map((t, i) => {
+      const discordLink = `https://discord.com/channels/${guildId}/${t.threadId}`;
+      return `${i + 1}.) <${discordLink}|${t.threadName}> (${t.replyCount} replies)`;
+    })
+    .join('\n');
+  
+  return {
+    text: `Top 5 Help Threads`,
+    blocks: [
+      {
+        type: 'header',
+        text: { type: 'plain_text', text: '🔥 Top Help Threads (5+ replies)', emoji: true },
+      },
+      {
+        type: 'section',
+        text: { type: 'mrkdwn', text: threadList },
+      },
+      {
+        type: 'context',
+        elements: [
+          { type: 'mrkdwn', text: `_Click a thread title to view it in Discord_` },
+        ],
+      },
+    ],
+  };
+}
+
+/**
  * Get recent messages from a channel
  */
 export function getRecentMessages(channel: string, limit: number = 10): TrackedMessage[] {
