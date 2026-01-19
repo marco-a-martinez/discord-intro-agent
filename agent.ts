@@ -313,23 +313,33 @@ discordClient.on(Events.MessageCreate, async (message) => {
 
 // Handle Slack events (messages and mentions)
 slackSocket.on('slack_event', async (args: any) => {
-  const event = args?.event || args?.body?.event;
-  const ack = args?.ack;
-  if (ack) await ack();
+  try {
+    const ack = args?.ack;
+    if (ack) await ack();
+  } catch (e) {
+    // ack might not be a function in some event types
+  }
   
-  if (!event) return;
+  const event = args?.event || args?.body?.event || args;
+  
+  if (!event || !event.type) {
+    // Some events don't have the structure we expect, skip them
+    return;
+  }
   
   try {
     // Handle direct messages
     if (event.type === 'message' && !event.subtype && !event.bot_id) {
       const isDM = event.channel?.startsWith('D');
       if (isDM) {
+        console.log(`\n📩 Received DM in channel ${event.channel}`);
         await handleSlackMessage(event);
       }
     }
     
     // Handle app mentions
     if (event.type === 'app_mention') {
+      console.log(`\n📩 Received app mention in channel ${event.channel}`);
       await handleSlackMessage(event);
     }
   } catch (error) {
