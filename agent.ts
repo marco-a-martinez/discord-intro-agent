@@ -572,39 +572,55 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
     
     // Handle forum channels (like #help)
     if (channel.type === 15) { // GuildForum
+      console.log(`         [Forum] Detected forum channel, fetching threads...`);
       const forumChannel = channel as any;
-      const threads = await forumChannel.threads.fetchActive();
-      const archivedThreads = await forumChannel.threads.fetchArchived({ limit: 20 });
       
-      const allThreads = [...threads.threads.values(), ...archivedThreads.threads.values()];
-      
-      for (const thread of allThreads) {
-        if (thread.createdAt && thread.createdAt < cutoffDate) continue;
+      try {
+        const threads = await forumChannel.threads.fetchActive();
+        console.log(`         [Forum] Active threads: ${threads.threads.size}`);
         
-        try {
-          const messages = await thread.messages.fetch({ limit: 10 });
-          for (const [, message] of messages) {
-            if (message.author.bot) continue;
-            if (message.createdAt < cutoffDate) continue;
-            
-            try {
-              const topic = await classifyMessage(message.content);
-              await recordMessage(
-                message.content,
-                message.author.username,
-                channelName,
-                topic
-              );
-              processed++;
-            } catch (error) {
-              // Skip messages that fail to process
-            }
+        const archivedThreads = await forumChannel.threads.fetchArchived({ limit: 50 });
+        console.log(`         [Forum] Archived threads: ${archivedThreads.threads.size}`);
+        
+        const allThreads = [...threads.threads.values(), ...archivedThreads.threads.values()];
+        console.log(`         [Forum] Total threads to process: ${allThreads.length}`);
+        
+        for (const thread of allThreads) {
+          if (thread.createdAt && thread.createdAt < cutoffDate) {
+            console.log(`         [Forum] Skipping old thread: ${thread.name}`);
+            continue;
           }
-        } catch (error) {
-          // Skip threads that fail to fetch
+          
+          try {
+            const messages = await thread.messages.fetch({ limit: 20 });
+            console.log(`         [Forum] Thread "${thread.name}": ${messages.size} messages`);
+            
+            for (const [, message] of messages) {
+              if (message.author.bot) continue;
+              if (message.createdAt < cutoffDate) continue;
+              
+              try {
+                const topic = await classifyMessage(message.content);
+                await recordMessage(
+                  message.content,
+                  message.author.username,
+                  channelName,
+                  topic
+                );
+                processed++;
+              } catch (error) {
+                // Skip messages that fail to process
+              }
+            }
+          } catch (error) {
+            console.log(`         [Forum] Error fetching thread ${thread.name}: ${error}`);
+          }
         }
+      } catch (error) {
+        console.log(`         [Forum] Error fetching threads: ${error}`);
       }
       
+      console.log(`         [Forum] Total messages processed: ${processed}`);
       return processed;
     }
     
