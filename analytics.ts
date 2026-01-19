@@ -19,6 +19,8 @@ export interface TrackedMessage {
   topic: Topic;
   helpTopic?: string; // More specific topic for #help channel
   timestamp: Date;
+  threadId?: string; // For forum posts - the thread ID
+  threadName?: string; // For forum posts - the thread title
 }
 
 // Persistence file path
@@ -262,7 +264,9 @@ export async function recordMessage(
   content: string,
   author: string,
   channel: string,
-  topic: Topic
+  topic: Topic,
+  threadId?: string,
+  threadName?: string
 ): Promise<void> {
   let helpTopic: string | undefined;
   
@@ -278,6 +282,8 @@ export async function recordMessage(
     topic,
     helpTopic,
     timestamp: new Date(),
+    threadId,
+    threadName,
   });
   
   // Also update counts
@@ -384,6 +390,32 @@ export function getTopHelpTopics(limit: number = 5): { topic: string; count: num
 }
 
 /**
+ * Get top threads by reply count (threads with minReplies or more)
+ */
+export function getTopThreads(minReplies: number = 5, limit: number = 5): { threadId: string; threadName: string; replyCount: number }[] {
+  // Count messages per thread
+  const threadCounts = new Map<string, { name: string; count: number }>();
+  
+  for (const msg of messages) {
+    if (msg.threadId && msg.threadName) {
+      const current = threadCounts.get(msg.threadId);
+      if (current) {
+        current.count++;
+      } else {
+        threadCounts.set(msg.threadId, { name: msg.threadName, count: 1 });
+      }
+    }
+  }
+  
+  // Filter by minReplies and sort by count
+  return Array.from(threadCounts.entries())
+    .filter(([_, data]) => data.count >= minReplies)
+    .map(([threadId, data]) => ({ threadId, threadName: data.name, replyCount: data.count }))
+    .sort((a, b) => b.replyCount - a.replyCount)
+    .slice(0, limit);
+}
+
+/**
  * Get recent messages from a channel
  */
 export function getRecentMessages(channel: string, limit: number = 10): TrackedMessage[] {
@@ -442,6 +474,7 @@ export function getTotalCounts(): Record<Topic, number> {
  */
 export async function answerAnalyticsQuestion(question: string, userId?: string): Promise<string> {
   const topHelpTopics = getTopHelpTopics(10);
+  const topThreads = getTopThreads(5, 5); // Threads with 5+ replies
   const summary = getTopicSummary();
   const totals = getTotalCounts();
   const totalMessages = messages.length;
@@ -462,10 +495,16 @@ export async function answerAnalyticsQuestion(question: string, userId?: string)
 You are an analytics assistant for a Discord community bot. Answer questions based on this data:
 
 TOTAL MESSAGES TRACKED: ${totalMessages}
+TOTAL HELP CHANNEL MESSAGES: ${helpMessages.length}
 
-TOP HELP TOPICS (what people ask for help with):
+TOP 5 MOST ACTIVE THREADS (5+ replies - these are the hot discussions):
+${topThreads.length > 0 
+  ? topThreads.map((t, i) => `${i + 1}.) "${t.threadName}" (${t.replyCount} replies)`).join('\n')
+  : 'No threads with 5+ replies yet'}
+
+TOP HELP TOPICS BY CATEGORY:
 ${topHelpTopics.length > 0 
-  ? topHelpTopics.map((t, i) => `${i + 1}. ${t.topic} (${t.count} requests)`).join('\n')
+  ? topHelpTopics.slice(0, 5).map((t, i) => `${i + 1}.) ${t.topic} (${t.count} requests)`).join('\n')
   : 'No help topics tracked yet'}
 
 MESSAGE TYPES ACROSS ALL CHANNELS:
@@ -481,9 +520,6 @@ ${Object.entries(summary).map(([channel, topics]) => {
   const channelTotal = Object.values(topics).reduce((a, b) => a + b, 0);
   return `#${channel}: ${channelTotal} messages`;
 }).join('\n')}
-
-RECENT HELP REQUESTS (last 5):
-${helpMessages.slice(-5).map(m => `- "${m.content.slice(0, 100)}${m.content.length > 100 ? '...' : ''}" (topic: ${m.helpTopic || 'unknown'})`).join('\n') || 'None yet'}
 `;
 
   // Store user's question in conversation history
@@ -507,20 +543,20 @@ FORMATTING RULES:
 - Start your response directly with "Summary:" (no space before it)
 - Use numbered lists like: 1.) 2.) 3.)
 - Do NOT use asterisks (*) for bullet points
-- Structure: Summary section, then Top 5 section
 
 Your response must follow this EXACT format:
+
 Summary:
-[3-4 sentences with specific details: mention the total number of messages, which channels are most active, what types of issues dominate, and any notable patterns or trends you see in the data]
+[Write 4-5 detailed sentences. Include: exact message counts, specific percentages, name the top issues explicitly, identify specific patterns like "authentication issues spike" or "VS Code problems are common", and note any actionable insights like "users struggle most with X"]
 
-Top 5:
-1.) Topic name (X requests)
-2.) Topic name (X requests)
-3.) Topic name (X requests)
-4.) Topic name (X requests)
-5.) Topic name (X requests)
+Top 5 Active Threads (5+ replies):
+1.) "Thread title here" (X replies)
+2.) "Thread title here" (X replies)
+3.) "Thread title here" (X replies)
+4.) "Thread title here" (X replies)
+5.) "Thread title here" (X replies)
 
-Start your response with the word Summary immediately, no spaces or other text before it.`,
+Be specific and data-driven. Don't be vague - cite actual numbers and thread names from the data.`,
         stream: false,
       }),
     });

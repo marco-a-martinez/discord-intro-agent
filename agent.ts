@@ -631,7 +631,9 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
                   message.content,
                   message.author.username,
                   channelName,
-                  topic
+                  topic,
+                  thread.id,
+                  thread.name
                 );
                 processed++;
               } catch (error) {
