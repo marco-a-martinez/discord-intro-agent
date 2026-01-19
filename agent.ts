@@ -11,7 +11,9 @@ import {
   recordMessage, 
   formatDailySummaryForSlack,
   formatTopHelpTopicsForSlack,
-  answerAnalyticsQuestion 
+  answerAnalyticsQuestion,
+  loadPersistedData,
+  hasPersistedData 
 } from "./analytics";
 
 // Discord client
@@ -676,14 +678,18 @@ discordClient.once(Events.ClientReady, async (readyClient) => {
   console.log(`\n   📊 Analytics tracking for ${analyticsChannels.length} channel(s):`);
   analyticsChannels.forEach(ch => console.log(`      - #${ch.name}`));
   
-  // Fetch historical messages for analytics channels
-  console.log(`\n   📥 Loading historical messages...`);
-  for (const ch of analyticsChannels) {
-    if (!ch.channelId) continue;
-    const count = await fetchHistoricalMessages(ch.channelId, ch.name, 100);
-    console.log(`      - #${ch.name}: ${count} messages loaded`);
+  // Fetch historical messages for analytics channels (skip if we have persisted data)
+  if (hasPersistedData()) {
+    console.log(`\n   ✅ Using persisted analytics data (skip historical fetch)\n`);
+  } else {
+    console.log(`\n   📥 Loading historical messages...`);
+    for (const ch of analyticsChannels) {
+      if (!ch.channelId) continue;
+      const count = await fetchHistoricalMessages(ch.channelId, ch.name, 100);
+      console.log(`      - #${ch.name}: ${count} messages loaded`);
+    }
+    console.log(`   ✅ Historical data loaded!\n`);
   }
-  console.log(`   ✅ Historical data loaded!\n`);
 });
 
 slackSocket.on("ready", async () => {
@@ -705,6 +711,10 @@ slackSocket.on("ready", async () => {
 (async () => {
   console.log("🚀 Starting Discord Community Agent V2...");
   console.log("   Using Ollama for AI responses (local & private)");
+  
+  // Load persisted analytics data
+  loadPersistedData();
+  
   console.log("   Connecting to Discord...");
   await discordClient.login(process.env.DISCORD_TOKEN);
 

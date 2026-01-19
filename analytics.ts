@@ -1,4 +1,6 @@
 import { OLLAMA_CONFIG } from "./models";
+import * as fs from "fs";
+import * as path from "path";
 
 // Topic categories for message classification
 export type Topic = 
@@ -19,9 +21,66 @@ export interface TrackedMessage {
   timestamp: Date;
 }
 
+// Persistence file path
+const DATA_FILE = path.join(process.cwd(), 'analytics-data.json');
+
 // In-memory storage
-const messages: TrackedMessage[] = [];
+let messages: TrackedMessage[] = [];
 const topicCounts = new Map<string, Map<Topic, number>>();
+
+/**
+ * Load persisted data from disk
+ */
+export function loadPersistedData(): void {
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+      messages = data.messages.map((m: any) => ({
+        ...m,
+        timestamp: new Date(m.timestamp),
+      }));
+      
+      // Rebuild topic counts from messages
+      for (const msg of messages) {
+        if (!topicCounts.has(msg.channel)) {
+          topicCounts.set(msg.channel, new Map());
+        }
+        const channelTopics = topicCounts.get(msg.channel)!;
+        const currentCount = channelTopics.get(msg.topic) ?? 0;
+        channelTopics.set(msg.topic, currentCount + 1);
+      }
+      
+      console.log(`   📂 Loaded ${messages.length} messages from disk`);
+    }
+  } catch (error) {
+    console.error('Failed to load persisted data:', error);
+  }
+}
+
+/**
+ * Check if we have persisted data (to skip historical loading)
+ */
+export function hasPersistedData(): boolean {
+  return messages.length > 0;
+}
+
+/**
+ * Save data to disk
+ */
+function saveData(): void {
+  try {
+    fs.writeFileSync(DATA_FILE, JSON.stringify({ messages }, null, 2));
+  } catch (error) {
+    console.error('Failed to save data:', error);
+  }
+}
+
+// Debounce saves to avoid writing too frequently
+let saveTimeout: NodeJS.Timeout | null = null;
+function debouncedSave(): void {
+  if (saveTimeout) clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(saveData, 5000); // Save 5 seconds after last change
+}
 
 /**
  * Classify a message using Ollama AI
@@ -140,6 +199,9 @@ export async function recordMessage(
   const channelTopics = topicCounts.get(channel)!;
   const currentCount = channelTopics.get(topic) ?? 0;
   channelTopics.set(topic, currentCount + 1);
+  
+  // Persist to disk
+  debouncedSave();
 }
 
 /**
