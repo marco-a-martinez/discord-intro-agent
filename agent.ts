@@ -567,10 +567,12 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
     const channel = await discordClient.channels.fetch(channelId);
     if (!channel) return 0;
     
+    console.log(`         [Debug] Channel ${channelName} type: ${channel.type}`);
+    
     const cutoffDate = new Date('2024-01-01');
     let processed = 0;
     
-    // Handle forum channels (like #help)
+    // Handle forum channels (like #help) - type 15 is GuildForum
     if (channel.type === 15) { // GuildForum
       console.log(`         [Forum] Detected forum channel, fetching threads...`);
       const forumChannel = channel as any;
