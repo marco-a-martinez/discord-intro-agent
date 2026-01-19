@@ -155,16 +155,75 @@ export function recordTopic(channel: string, topic: Topic): void {
 }
 
 /**
+ * Normalize a help topic to consolidate similar topics
+ */
+function normalizeHelpTopic(topic: string): string {
+  let normalized = topic
+    .toLowerCase()
+    .trim()
+    .replace(/["']/g, '')           // Remove quotes
+    .replace(/\s+/g, ' ')           // Normalize whitespace
+    .replace(/issues?$/i, 'issue')  // Normalize plural "issues" to "issue"
+    .replace(/problems?$/i, 'issue') // "problem(s)" -> "issue"
+    .replace(/errors?$/i, 'error')  // Normalize plural "errors"
+    .replace(/questions?$/i, 'question'); // Normalize plural
+  
+  // Map common variations to canonical forms
+  const mappings: Record<string, string> = {
+    'coder setup': 'coder setup issue',
+    'coder configuration': 'coder setup issue',
+    'coder install': 'coder setup issue',
+    'coder installation': 'coder setup issue',
+    'vs code setup': 'vs code issue',
+    'vscode setup': 'vs code issue',
+    'vs code issue': 'vs code issue',
+    'vscode issue': 'vs code issue',
+    'vs code connection': 'vs code issue',
+    'workspace issue': 'workspace issue',
+    'workspace crash': 'workspace issue',
+    'workspace connection': 'workspace issue',
+    'ssh issue': 'ssh issue',
+    'ssh connection': 'ssh issue',
+    'ssh setup': 'ssh issue',
+    'docker issue': 'docker issue',
+    'docker setup': 'docker issue',
+    'devcontainer issue': 'devcontainer issue',
+    'devcontainer setup': 'devcontainer issue',
+    'template issue': 'template issue',
+    'template setup': 'template issue',
+    'authentication issue': 'authentication issue',
+    'auth issue': 'authentication issue',
+    'login issue': 'authentication issue',
+    'git issue': 'git issue',
+    'git authentication': 'git issue',
+    'github issue': 'git issue',
+    'unknown issue': 'general help',
+    'no main topic extracted': 'general help',
+    'general help': 'general help',
+  };
+  
+  // Check for mapping matches
+  for (const [pattern, canonical] of Object.entries(mappings)) {
+    if (normalized.includes(pattern)) {
+      return canonical;
+    }
+  }
+  
+  return normalized;
+}
+
+/**
  * Get top help topics with counts
  */
 export function getTopHelpTopics(limit: number = 5): { topic: string; count: number }[] {
   const helpMessages = messages.filter(m => m.channel === 'help' && m.helpTopic);
   
-  // Count occurrences of each help topic
+  // Count occurrences of each help topic (normalized)
   const topicCounts = new Map<string, number>();
   for (const msg of helpMessages) {
-    const current = topicCounts.get(msg.helpTopic!) ?? 0;
-    topicCounts.set(msg.helpTopic!, current + 1);
+    const normalized = normalizeHelpTopic(msg.helpTopic!);
+    const current = topicCounts.get(normalized) ?? 0;
+    topicCounts.set(normalized, current + 1);
   }
   
   // Sort by count and return top N
