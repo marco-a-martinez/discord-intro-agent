@@ -41,6 +41,9 @@ const pendingResponses = new Map();
 // Get bot user ID (set on startup)
 let slackBotUserId: string | null = null;
 
+// Slack channel for intro notifications (falls back to user DM if not set)
+const SLACK_INTRO_CHANNEL = process.env.SLACK_INTRO_CHANNEL || process.env.YOUR_SLACK_USER_ID;
+
 // AI-powered response generator using Ollama
 async function generateResponse(message: string): Promise<string | null> {
   try {
@@ -295,9 +298,9 @@ discordClient.on(Events.MessageCreate, async (message) => {
       ],
     });
 
-    // Send to Slack
+    // Send to Slack channel (or DM fallback)
     const result = await slackWeb.chat.postMessage({
-      channel: process.env.YOUR_SLACK_USER_ID!,
+      channel: SLACK_INTRO_CHANNEL!,
       text: `New intro from ${message.author.username}`,
       blocks: blocks,
     });
@@ -348,6 +351,36 @@ slackSocket.on('slack_event', async (args: any) => {
     }
   } catch (error) {
     console.error('Error handling Slack event:', error);
+  }
+});
+
+// Handle Slack slash commands
+slackSocket.on('slash_commands', async ({ body, ack }: { body: any; ack: Function }) => {
+  console.log(`\n📊 Slash command ${body.command} from ${body.user_name}`);
+  
+  if (body.command === '/discord-stats') {
+    const guildId = process.env.DISCORD_GUILD_ID || '';
+    const subcommand = (body.text || '').toLowerCase().trim();
+    
+    // Check for specific subcommands
+    if (subcommand.includes('thread') || subcommand.includes('help') || subcommand.includes('active') || subcommand.includes('popular')) {
+      const report = formatTopThreadsForSlack(guildId);
+      await ack({
+        response_type: 'ephemeral',
+        ...report,
+      });
+      console.log('   ✅ Sent top threads report');
+    } else {
+      // Default: combined report
+      const report = formatCombinedReportForSlack();
+      await ack({
+        response_type: 'ephemeral',
+        ...report,
+      });
+      console.log('   ✅ Sent combined report');
+    }
+  } else {
+    await ack();
   }
 });
 
