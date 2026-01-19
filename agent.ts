@@ -799,8 +799,8 @@ slackSocket.on("ready", async () => {
   console.log("   Try: 'What are the top help topics?' or 'Show me a summary'\n");
 });
 
-// Health check - posts status to Slack every hour
-const HEALTH_CHECK_INTERVAL_MS = 60 * 60 * 1000; // 1 hour
+// Health check - posts status to Slack twice a day
+const HEALTH_CHECK_INTERVAL_MS = 12 * 60 * 60 * 1000; // 12 hours
 const HEALTH_CHECK_CHANNEL = process.env.SLACK_HEALTH_CHECK_CHANNEL;
 
 async function sendHealthCheck(): Promise<void> {
