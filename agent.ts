@@ -355,32 +355,46 @@ slackSocket.on('slack_event', async (args: any) => {
 });
 
 // Handle Slack slash commands
-slackSocket.on('slash_commands', async ({ body, ack }: { body: any; ack: Function }) => {
+slackSocket.on('slash_commands', async (args: any) => {
+  const { body, ack } = args;
+  
+  // Acknowledge immediately
+  if (ack) await ack();
+  
   console.log(`\n📊 Slash command ${body.command} from ${body.user_name}`);
   
   if (body.command === '/discord-stats') {
     const guildId = process.env.DISCORD_GUILD_ID || '';
     const subcommand = (body.text || '').toLowerCase().trim();
     
-    // Check for specific subcommands
+    let report;
     if (subcommand.includes('thread') || subcommand.includes('help') || subcommand.includes('active') || subcommand.includes('popular')) {
-      const report = formatTopThreadsForSlack(guildId);
-      await ack({
-        response_type: 'ephemeral',
-        ...report,
-      });
-      console.log('   ✅ Sent top threads report');
+      report = formatTopThreadsForSlack(guildId);
+      console.log('   📊 Generating top threads report...');
     } else {
-      // Default: combined report
-      const report = formatCombinedReportForSlack();
-      await ack({
-        response_type: 'ephemeral',
+      report = formatCombinedReportForSlack();
+      console.log('   📊 Generating combined report...');
+    }
+    
+    // Respond via response_url
+    if (body.response_url) {
+      await fetch(body.response_url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          response_type: 'ephemeral',
+          ...report,
+        }),
+      });
+      console.log('   ✅ Sent report via response_url');
+    } else {
+      // Fallback: post to channel
+      await slackWeb.chat.postMessage({
+        channel: body.channel_id,
         ...report,
       });
-      console.log('   ✅ Sent combined report');
+      console.log('   ✅ Sent report to channel');
     }
-  } else {
-    await ack();
   }
 });
 
