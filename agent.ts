@@ -18,7 +18,10 @@ import {
   hasPersistedData,
   clearConversation,
   addToConversation,
-  getAllMessages
+  getAllMessages,
+  getMessagesForRollup,
+  formatWeeklyRollupForSlack,
+  TrackedMessage
 } from "./analytics";
 
 // Discord client
@@ -161,7 +164,11 @@ discordClient.on(Events.MessageCreate, async (message) => {
         message.content,
         message.author.username,
         channelConfig.name,
-        topic
+        topic,
+        undefined, // threadId
+        undefined, // threadName
+        message.id, // messageId for reactions
+        message.channelId // channelId for Discord links
       );
       console.log(`   📊 Classified as: ${topic}`);
     } catch (error) {
@@ -704,7 +711,9 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
                   channelName,
                   topic,
                   thread.id,
-                  thread.name
+                  thread.name,
+                  message.id, // messageId for reactions
+                  thread.id // channelId (thread ID for forum posts)
                 );
                 processed++;
               } catch (error) {
@@ -739,7 +748,11 @@ async function fetchHistoricalMessages(channelId: string, channelName: string, l
           message.content,
           message.author.username,
           channelName,
-          topic
+          topic,
+          undefined, // threadId
+          undefined, // threadName
+          message.id, // messageId for reactions
+          channelId // channelId for Discord links
         );
         processed++;
       } catch (error) {
@@ -822,6 +835,68 @@ async function sendHealthCheck(): Promise<void> {
   }
 }
 
+// Weekly rollup - fetches reactions and posts top messages twice a day
+const ROLLUP_CHANNEL = process.env.SLACK_ROLLUP_CHANNEL || HEALTH_CHECK_CHANNEL;
+const MIN_REACTIONS = 3;
+
+async function sendWeeklyRollup(): Promise<void> {
+  if (!ROLLUP_CHANNEL) return;
+  
+  const guildId = process.env.DISCORD_GUILD_ID || '';
+  const messages = getMessagesForRollup(7); // Last 7 days
+  
+  console.log(`📊 Starting weekly rollup: ${messages.length} messages to check for reactions...`);
+  
+  // Fetch reactions for each message
+  const rankedMessages: Array<{ message: TrackedMessage; reactionCount: number }> = [];
+  
+  for (const msg of messages) {
+    if (!msg.messageId || !msg.channelId) continue;
+    
+    try {
+      // Fetch the channel (could be a thread)
+      const channel = await discordClient.channels.fetch(msg.channelId);
+      if (!channel || !channel.isTextBased()) continue;
+      
+      const textChannel = channel as any;
+      const discordMessage = await textChannel.messages.fetch(msg.messageId).catch(() => null);
+      
+      if (!discordMessage) continue;
+      
+      // Count total reactions
+      let totalReactions = 0;
+      for (const [, reaction] of discordMessage.reactions.cache) {
+        totalReactions += reaction.count;
+      }
+      
+      if (totalReactions >= MIN_REACTIONS) {
+        rankedMessages.push({ message: msg, reactionCount: totalReactions });
+      }
+    } catch (error) {
+      // Skip messages we can't fetch
+      continue;
+    }
+  }
+  
+  // Sort by reaction count (highest first)
+  rankedMessages.sort((a, b) => b.reactionCount - a.reactionCount);
+  
+  console.log(`📊 Found ${rankedMessages.length} messages with ${MIN_REACTIONS}+ reactions`);
+  
+  // Format and send to Slack
+  const report = formatWeeklyRollupForSlack(rankedMessages, guildId);
+  
+  try {
+    await slackWeb.chat.postMessage({
+      channel: ROLLUP_CHANNEL,
+      ...report,
+    });
+    console.log(`📊 Weekly rollup sent (${rankedMessages.length} messages)`);
+  } catch (error) {
+    console.error('Failed to send weekly rollup:', error);
+  }
+}
+
 (async () => {
   console.log("🚀 Starting Discord Community Agent V2...");
   console.log("   Using Ollama for AI responses (local & private)");
@@ -835,11 +910,19 @@ async function sendHealthCheck(): Promise<void> {
   console.log("   Connecting to Slack...");
   await slackSocket.start();
   
-  // Start health check interval
+  // Start health check interval (twice a day)
   if (HEALTH_CHECK_CHANNEL) {
-    console.log(`   💓 Health checks enabled (every hour to ${HEALTH_CHECK_CHANNEL})`);
+    console.log(`   💓 Health checks enabled (every 12h to ${HEALTH_CHECK_CHANNEL})`);
     setInterval(sendHealthCheck, HEALTH_CHECK_INTERVAL_MS);
     // Send initial health check after 10 seconds (let connections stabilize)
     setTimeout(sendHealthCheck, 10000);
+  }
+  
+  // Start weekly rollup interval (twice a day, same as health check)
+  if (ROLLUP_CHANNEL) {
+    console.log(`   📊 Weekly rollup enabled (every 12h to ${ROLLUP_CHANNEL})`);
+    setInterval(sendWeeklyRollup, HEALTH_CHECK_INTERVAL_MS);
+    // Send initial rollup after 30 seconds (let Discord connection stabilize)
+    setTimeout(sendWeeklyRollup, 30000);
   }
 })();

@@ -21,6 +21,8 @@ export interface TrackedMessage {
   timestamp: Date;
   threadId?: string; // For forum posts - the thread ID
   threadName?: string; // For forum posts - the thread title
+  messageId?: string; // Discord message ID for fetching reactions
+  channelId?: string; // Discord channel ID for building URLs
 }
 
 // Persistence file path
@@ -286,7 +288,9 @@ export async function recordMessage(
   channel: string,
   topic: Topic,
   threadId?: string,
-  threadName?: string
+  threadName?: string,
+  messageId?: string,
+  channelId?: string
 ): Promise<void> {
   let helpTopic: string | undefined;
   
@@ -304,6 +308,8 @@ export async function recordMessage(
     timestamp: new Date(),
     threadId,
     threadName,
+    messageId,
+    channelId,
   });
   
   // Also update counts
@@ -880,6 +886,93 @@ export function formatCombinedReportForSlack(): { text: string; blocks: object[]
 
   return {
     text: `Discord Analytics: ${totalMessages} messages, top topic: ${topTopics[0]?.topic || 'N/A'}`,
+    blocks,
+  };
+}
+
+/**
+ * Get messages from the last N days that have messageId for reaction fetching
+ */
+export function getMessagesForRollup(days: number = 7): TrackedMessage[] {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - days);
+  
+  return messages.filter(m => {
+    const msgDate = new Date(m.timestamp);
+    return msgDate >= cutoff && m.messageId && m.channelId;
+  });
+}
+
+/**
+ * Format the weekly rollup for Slack
+ */
+export function formatWeeklyRollupForSlack(
+  rankedMessages: Array<{ message: TrackedMessage; reactionCount: number }>,
+  guildId: string
+): { text: string; blocks: object[] } {
+  if (rankedMessages.length === 0) {
+    return {
+      text: '📊 Weekly Rollup: No messages with 3+ reactions this week',
+      blocks: [
+        {
+          type: 'header',
+          text: { type: 'plain_text', text: '📊 Weekly Community Rollup', emoji: true },
+        },
+        {
+          type: 'section',
+          text: { type: 'mrkdwn', text: '_No messages with 3+ reactions in the last 7 days._' },
+        },
+      ],
+    };
+  }
+
+  const messageLines = rankedMessages.slice(0, 15).map((item, i) => {
+    const m = item.message;
+    const truncatedContent = m.content.length > 100 
+      ? m.content.substring(0, 100) + '...' 
+      : m.content;
+    
+    // Build Discord link
+    const channelForLink = m.threadId || m.channelId;
+    const discordUrl = `https://discord.com/channels/${guildId}/${channelForLink}/${m.messageId}`;
+    
+    return `${i + 1}. *${item.reactionCount} reactions* | #${m.channel} | _${m.topic}_\n     <${discordUrl}|"${truncatedContent.replace(/\n/g, ' ')}">`;
+  });
+
+  const blocks: object[] = [
+    {
+      type: 'header',
+      text: { type: 'plain_text', text: '📊 Weekly Community Rollup', emoji: true },
+    },
+    {
+      type: 'context',
+      elements: [
+        { type: 'mrkdwn', text: `_Top ${rankedMessages.length} messages with 3+ reactions from the last 7 days_` },
+      ],
+    },
+    { type: 'divider' },
+  ];
+
+  // Split into chunks to avoid Slack's block limits
+  for (const line of messageLines) {
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn', text: line },
+    });
+  }
+
+  blocks.push(
+    { type: 'divider' },
+    {
+      type: 'context',
+      elements: [
+        { type: 'mrkdwn', text: '_Click any message to view it in Discord_' },
+      ],
+    }
+  );
+
+  return {
+    text: `📊 Weekly Rollup: ${rankedMessages.length} popular messages`,
     blocks,
   };
 }

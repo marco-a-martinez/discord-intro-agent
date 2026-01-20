@@ -386,6 +386,7 @@ SLACK_BOT_TOKEN=         # Bot OAuth token (xoxb-)
 SLACK_APP_TOKEN=         # Socket mode app token (xapp-)
 SLACK_INTRO_CHANNEL=     # Channel/user ID to receive intro notifications
 SLACK_HEALTH_CHECK_CHANNEL= # Channel/user ID to receive health check updates
+SLACK_ROLLUP_CHANNEL=    # Channel/user ID for weekly rollup (defaults to HEALTH_CHECK_CHANNEL)
 ```
 
 ### Code Structure
