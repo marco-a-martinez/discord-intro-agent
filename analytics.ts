@@ -1,4 +1,22 @@
-import { OLLAMA_CONFIG } from "./models";
+import { ANTHROPIC_CONFIG } from "./models";
+import { createAnthropic } from '@ai-sdk/anthropic';
+import { generateText } from 'ai';
+
+// Initialize Anthropic client
+const anthropic = createAnthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+// Helper function for Anthropic text generation
+async function generateWithAnthropic(prompt: string): Promise<string> {
+  const { text } = await generateText({
+    model: anthropic(ANTHROPIC_CONFIG.model),
+    prompt,
+    maxTokens: 512,
+  });
+  return text;
+}
+
 import * as fs from "fs";
 import * as path from "path";
 
@@ -175,16 +193,11 @@ export function clearConversation(userId: string): void {
 }
 
 /**
- * Classify a message using Ollama AI
+ * Classify a message using Anthropic Claude
  */
 export async function classifyMessage(content: string): Promise<Topic> {
   try {
-    const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: OLLAMA_CONFIG.model,
-        prompt: `You are a message classifier. Classify the message into exactly ONE category.
+    const aiResponse = await generateWithAnthropic(`You are a message classifier. Classify the message into exactly ONE category.
 
 VALID CATEGORIES (you MUST respond with one of these exact values):
 - support-request
@@ -215,13 +228,8 @@ EXAMPLES:
 MESSAGE TO CLASSIFY:
 "${content}"
 
-RESPOND WITH ONLY ONE OF: support-request, feature-request, bug-report, general-discussion, praise, question`,
-        stream: false,
-      }),
-    });
-
-    const data = await response.json() as { response: string };
-    const result = data.response?.trim().toLowerCase() as Topic;
+RESPOND WITH ONLY ONE OF: support-request, feature-request, bug-report, general-discussion, praise, question`);
+    const result = aiResponse.trim().toLowerCase() as Topic;
     
     const validTopics: Topic[] = [
       'support-request',
@@ -239,7 +247,7 @@ RESPOND WITH ONLY ONE OF: support-request, feature-request, bug-report, general-
     console.warn(`AI returned invalid topic: "${result}", defaulting to general-discussion`);
     return 'general-discussion';
   } catch (error) {
-    console.error('Ollama classification error:', error);
+    console.error('Anthropic classification error:', error);
     return 'general-discussion';
   }
 }
@@ -249,12 +257,7 @@ RESPOND WITH ONLY ONE OF: support-request, feature-request, bug-report, general-
  */
 export async function extractHelpTopic(content: string): Promise<string> {
   try {
-    const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: OLLAMA_CONFIG.model,
-        prompt: `Extract the main topic or issue from this help request. Summarize in 2-5 words.
+    const aiResponse = await generateWithAnthropic(`Extract the main topic or issue from this help request. Summarize in 2-5 words.
 
 Examples:
 - "How do I set up VS Code with Coder?" -> "VS Code setup"
@@ -266,15 +269,10 @@ Examples:
 MESSAGE:
 "${content}"
 
-Respond with ONLY the topic (2-5 words), nothing else.`,
-        stream: false,
-      }),
-    });
-
-    const data = await response.json() as { response: string };
-    return data.response?.trim().toLowerCase() || 'general help';
+Respond with ONLY the topic (2-5 words), nothing else.`);
+    return aiResponse.trim().toLowerCase() || 'general help';
   } catch (error) {
-    console.error('Help topic extraction error:', error);
+    console.error('Anthropic help topic extraction error:', error);
     return 'general help';
   }
 }
@@ -600,12 +598,7 @@ ${Object.entries(summary).map(([channel, topics]) => {
   }
 
   try {
-    const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: OLLAMA_CONFIG.model,
-        prompt: `${dataContext}${conversationContext}
+    const aiResponse = await generateWithAnthropic(`${dataContext}${conversationContext}
 CURRENT USER QUESTION: ${question}
 
 Provide a helpful answer based on the data above. Use the conversation history to understand context and follow-up questions.
@@ -628,13 +621,8 @@ Top 5 Active Threads (5+ replies):
 4.) "Thread title here" (X replies)
 5.) "Thread title here" (X replies)
 
-Be specific and data-driven. Don't be vague - cite actual numbers and thread names from the data.`,
-        stream: false,
-      }),
-    });
-
-    const data = await response.json() as { response: string };
-    const answer = data.response?.trim() || "I couldn't generate a response. Try again later.";
+Be specific and data-driven. Don't be vague - cite actual numbers and thread names from the data.`);
+    const answer = aiResponse.trim() || "I couldn't generate a response. Try again later.";
     
     // Store assistant's response in conversation history
     if (userId) {
