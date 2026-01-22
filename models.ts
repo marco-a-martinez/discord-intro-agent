@@ -1,7 +1,6 @@
-// Model configuration for Ollama
-export const OLLAMA_CONFIG = {
-  baseUrl: 'http://localhost:11434',
-  model: 'llama3.1:8b',
+// Model configuration for Anthropic Claude
+export const ANTHROPIC_CONFIG = {
+  model: 'claude-sonnet-4-20250514',
 } as const;
 
 // System prompt for community engagement responses

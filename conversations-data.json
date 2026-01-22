@@ -1,0 +1,46 @@
+{
+  "conversations": {
+    "U05KE0Z8XDJ": [
+      {
+        "role": "user",
+        "content": "What are the top issues so far?",
+        "timestamp": "2026-01-19T01:50:22.754Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Summary:\nBased on the data collected so far, we can see that there are various issues being reported in our community, with a focus on technical problems related to code setup, authentication, and SSH.\n\nTop 5:\n1.) coder setup issue (10 requests)\n2.) general help (8 requests)\n3.) ssh issue (8 requests)\n4.) authentication issue (7 requests)\n5.) vs code issue (5 requests)",
+        "timestamp": "2026-01-19T01:50:28.620Z"
+      },
+      {
+        "role": "user",
+        "content": "What are the top issues so far?",
+        "timestamp": "2026-01-19T01:53:23.128Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Summary:\nThe total number of messages tracked in our community is 716, indicating a moderate level of activity. The most active channels are #general and #feedback, with 100 messages each, while the help channel accounts for the majority of messages at 432. Analysis of the data reveals that technical issues dominate, particularly those related to coder setup, authentication, SSH, and VS Code.\n\nTop 5:\n1.) Coder setup issue (10 requests)\n2.) General help (8 requests)\n3.) SSH issue (8 requests)\n4.) Authentication issue (7 requests)\n5.) VS Code issue (5 requests)",
+        "timestamp": "2026-01-19T01:53:27.811Z"
+      },
+      {
+        "role": "user",
+        "content": "What are the top issues in the help channel?",
+        "timestamp": "2026-01-19T01:55:10.035Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Summary:\nThe help channel is the most active in our community, accounting for 432 messages out of a total of 716 tracked so far. The top issues in this channel are primarily technical in nature, reflecting common pain points that users face with coder setup, authentication, and SSH. We also observe a notable trend where a significant number of requests are related to coder setup issues.\n\nTop 5:\n1.) Coder setup issue (10 requests)\n2.) Authentication issue (7 requests)\n3.) SSH issue (6 requests) \n4.) General help (5 requests)\n5.) VS Code issue (5 requests)",
+        "timestamp": "2026-01-19T01:55:14.884Z"
+      },
+      {
+        "role": "user",
+        "content": "What are the top issues in the help channel?",
+        "timestamp": "2026-01-19T02:05:41.086Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Summary:\nThe help channel is the most active in our community, accounting for 70 messages out of a total of 354 tracked so far, which is approximately 19.8% of all messages. The top issues in this channel are primarily technical in nature, with \"coder setup issue\" being the most frequent request at 1 request, followed by \"general help\" and \"coder agent connection issue\". However, since our previous conversation showed a different set of top issues (coder setup issue, general help, ssh issue, authentication issue, vs code issue), it appears that these issues have reduced in frequency. Notably, there is no clear spike or trend in specific technical problems, suggesting that users are seeking general assistance and troubleshooting for various technical challenges.\n\nTop 5 Active Threads (5+ replies):\n1.) \"Help figuring out why my workspace is not being created, and getting it to.\" (20 replies)\n2.) \"This server is pretty good, However it lacks activity.\" (16 replies)\n3.) \"code server on truenas installing python\" (7 replies)\n4.) \"Does anyone know of a simple way to make it possible to ssh into a workspace using termius?\" (7 replies)\n5.) \"Docker-in-Docker devcontainers issue with VSCode\" (6 replies)",
+        "timestamp": "2026-01-19T02:05:52.281Z"
+      }
+    ]
+  }
+}

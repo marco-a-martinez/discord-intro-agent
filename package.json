@@ -17,6 +17,7 @@
     "zod": "latest"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.23",
     "@slack/socket-mode": "^2.0.0",
     "@slack/web-api": "^7.8.0",
     "discord.js": "^14.16.3",

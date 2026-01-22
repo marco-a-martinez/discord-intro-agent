@@ -1,0 +1,2746 @@
+{
+  "messages": [
+    {
+      "content": "the bot didnt started the basic questions like OS, type of issue, but i found the command to start it, thx",
+      "author": "t.vaz.plss",
+      "channel": "random",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:32.811Z"
+    },
+    {
+      "content": "The bot doesn't answer questions for you",
+      "author": "this.danielle",
+      "channel": "random",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:33.017Z"
+    },
+    {
+      "content": "Guys, the bot is not answering my help topic, can i post it here?",
+      "author": "t.vaz.plss",
+      "channel": "random",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:33.263Z"
+    },
+    {
+      "content": "how can we solve this",
+      "author": "traderavi",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:33.433Z"
+    },
+    {
+      "content": "hey I tried to use coder ec2 Linux template to spin ec2 instances but seems like when I stop the workspace its trying to destroy the ec2 and recreate it and put it in stop and the bad thing here is the data is not persistent",
+      "author": "traderavi",
+      "channel": "random",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:33.768Z"
+    },
+    {
+      "content": "Our github integration does this https://coder.com/docs/ai-coder/issue-tracker",
+      "author": "benpotter",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:33.993Z"
+    },
+    {
+      "content": "https://www.linkedin.com/feed/update/urn:li:activity:7315472743720710144/ this one",
+      "author": "yasbaltrine",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:34.287Z"
+    },
+    {
+      "content": "I havn't had the time to try Coder agents yet, but I found this in one of Coder's CEO Linkedin posts",
+      "author": "yasbaltrine",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:34.529Z"
+    },
+    {
+      "content": "How do you spin up a secure dev environment with Gemini?",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:34.760Z"
+    },
+    {
+      "content": "yeah!",
+      "author": "techwithanirudh",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:34.982Z"
+    },
+    {
+      "content": "Can't stop thinking about this  💭",
+      "author": "yasbaltrine",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:35.235Z"
+    },
+    {
+      "content": "looks amazing!",
+      "author": "techwithanirudh",
+      "channel": "random",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:02:35.442Z"
+    },
+    {
+      "content": "Hi coder community",
+      "author": "marco_community_manager",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:35.677Z"
+    },
+    {
+      "content": "Looks like you have Excalidraw transformed into window manager",
+      "author": "mrpeacock",
+      "channel": "random",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:35.902Z"
+    },
+    {
+      "content": "Nice!",
+      "author": "mrpeacock",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:36.133Z"
+    },
+    {
+      "content": "Hi coder community\n\nI made this little demo video of my dev env using coder embeded in excalidraw, I'm trying to build a product out of this\nThe goal is to merge your \"architecture diagrams\" and your actual dev env into a single \"brain map\" \n\nHappy to hear any feedback (also I hope I'm not going against the fair use of coder by doing this, I don't plan to modify/hide Coder in the final product)",
+      "author": "yasbaltrine",
+      "channel": "random",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:36.588Z"
+    },
+    {
+      "content": "https://tenor.com/b1dBn.gif",
+      "author": "grey3845",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:36.841Z"
+    },
+    {
+      "content": "Bribe Tacos...that sounds like a worthwhile endeavor:",
+      "author": "grey3845",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:37.096Z"
+    },
+    {
+      "content": "Unfortunately 💔",
+      "author": "noxide5430",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:37.338Z"
+    },
+    {
+      "content": "Yep I'm told this role is US-only, sorry!",
+      "author": "cian.coder",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:37.587Z"
+    },
+    {
+      "content": "I assume being in USA and Canada is a hard requirement?",
+      "author": "noxide5430",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:37.790Z"
+    },
+    {
+      "content": "DMing",
+      "author": "cian.coder",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:38.027Z"
+    },
+    {
+      "content": "<@861991849278832673> \nTwo questions, any idea who the hiring manager is for the IT Director position \nand\nAre any of you actually at HQ?\nWould love to send a case of bribe tacos",
+      "author": "darthacne",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:38.382Z"
+    },
+    {
+      "content": "Any one suggest me I want to make some amazing web",
+      "author": "jason._.xx",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:38.638Z"
+    },
+    {
+      "content": "this chat is so dead",
+      "author": "duckeydev",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:38.876Z"
+    },
+    {
+      "content": "@uptime",
+      "author": "lollllllllllllla",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:39.051Z"
+    },
+    {
+      "content": "Any opening for India, SEA?\n(\"Open Source Engineer\") works",
+      "author": "bravo68web",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:39.314Z"
+    },
+    {
+      "content": "no love for Oceania?",
+      "author": "noms0748",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:39.551Z"
+    },
+    {
+      "content": "Btw, no reply to my email yet, either automated or human. 😛",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:39.819Z"
+    },
+    {
+      "content": "<@861991849278832673> - Not quite what I'm looking for, but thanks anyway. 🙂",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:02:40.074Z"
+    },
+    {
+      "content": "There is one position open in EMEA currently (\"Open Source Engineer\")",
+      "author": "cian.coder",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:40.343Z"
+    },
+    {
+      "content": "I've sent an email. Thanks again.",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:02:40.557Z"
+    },
+    {
+      "content": "Thanks. There are only jobs in the US though. I saw the “ask@coder.com” email address. Would that get my application  to the right people?",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:40.826Z"
+    },
+    {
+      "content": "Hey Scott, our careers page is here if you're interested! https://jobs.ashbyhq.com/Coder",
+      "author": "cian.coder",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:41.104Z"
+    },
+    {
+      "content": "Hey Coder Team. \n\nCongrats on the $35M venture capital win!\n\nWhat would be the best channel to offer a speculative application to join your (to be newly added) work force in EMEA?",
+      "author": "smolinari",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:41.438Z"
+    },
+    {
+      "content": "`[EN]`\nGreetings! I’m Marcello, me and my team is conducting a research study titled: “Analysis of Public Perception towards the Impact of AI on Employment, Privacy and Data Security, and Education.” We kindly request your participation in our questionnaire. Your valuable input will greatly assist our research objectives. Thank you, and apologize in advance if this message bothers you. 😊\nhttps://forms.gle/F71PYFtkP3AB3a8A6",
+      "author": "_m.c.v.",
+      "channel": "random",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:41.908Z"
+    },
+    {
+      "content": "",
+      "author": "trungisreal",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:42.081Z"
+    },
+    {
+      "content": "Debugging at its finest",
+      "author": "sharp9692",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:42.325Z"
+    },
+    {
+      "content": "https://files.mcaq.me/c6h0b.png",
+      "author": "sharp9692",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:42.585Z"
+    },
+    {
+      "content": "lmao, w i d e k y l e",
+      "author": "lilac.ooo",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:42.850Z"
+    },
+    {
+      "content": "hi all 🙂 Sharing an awesome podcast episode we just released with Coder Founder <@206225075026788353> ! https://podcasters.spotify.com/pod/show/ossstartuppodcast/episodes/E121-Coding-in-the-Cloud-with-Coder-e2e7d8g",
+      "author": "robby092865",
+      "channel": "random",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:43.236Z"
+    },
+    {
+      "content": "Is there any chance, that any of you is",
+      "author": "cian.coder",
+      "channel": "random",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:43.424Z"
+    },
+    {
+      "content": "<a:pinkboost:1407671129430298815>",
+      "author": "schubertaxel",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:43.982Z"
+    },
+    {
+      "content": "Yeah devcontainers support is moving fast lately.\n\n<@413758463596822530>  I’ve worked with Coder workspaces and devcontainers where dotfiles are injected via bootstrap scripts and workspace init hooks, until native URL support lands.\n\nIn similar setups I handled Docker, Docker networks, Traefik routing and workspace lifecycle so the dev env stays reproducible without fighting git on early POCs.\n\nI’m a developer who prefers practical iteration, clean infra and low friction setups over ceremony, especially for private products and paid work.\n\nIf anyone here is tuning Coder, workspace networking, devcontainers or AI-assisted dev flows over SSH, happy to help debug or implement it.\n\nJust sharing hands-on experience, no noise 🙂",
+      "author": "hector05st_dev",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:44.637Z"
+    },
+    {
+      "content": "Not yet but we are working on to support all registry.coder.com/modules with devcontainers soon",
+      "author": "matifali",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:44.909Z"
+    },
+    {
+      "content": "Hello! Is it possible to specify a dotfiles URL for the devcontainers integration?",
+      "author": "lsalazarm99",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:45.122Z"
+    },
+    {
+      "content": "Hello.",
+      "author": "marco_community_manager",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:45.344Z"
+    },
+    {
+      "content": "Hello.\nI am a ✨developer✨ who prioritizes transparency, accuracy, and reliability, and I believe in eliminating unnecessary complexity.\nThese four elements are the foundation of my approach to working with clients.\nI have extensive experience in full-stack and artificial intelligence development. It is possible for CTO.\nI would be happy to show you my work, so please feel free to contact me anytime.\nBest.✔",
+      "author": "buldukcheim107",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:45.790Z"
+    },
+    {
+      "content": "67",
+      "author": "phorcys",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:45.964Z"
+    },
+    {
+      "content": "67",
+      "author": "eggso1",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:46.109Z"
+    },
+    {
+      "content": "I don't see the @ though, but I had a notification in here?",
+      "author": "ranner",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:46.318Z"
+    },
+    {
+      "content": "I've been summonsed?",
+      "author": "ranner",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:46.499Z"
+    },
+    {
+      "content": "Hello?",
+      "author": "marco_community_manager",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:46.724Z"
+    },
+    {
+      "content": "Hello?",
+      "author": "tschatscher",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:46.904Z"
+    },
+    {
+      "content": "Hi, I'm currently switching from VS Coder to Code Server and it's going well so far.\n\nI'd like to use something like remote SSH access, but I can't find anything.\n\nDoes anyone have any suggestions for how to program with AI via SSH?",
+      "author": "tschatscher",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:47.215Z"
+    },
+    {
+      "content": "- well at least it doesn't seem to be a snapshot and restore db issue after all. looks like my cloudflare ipbased rules were blocking some coder derp and rebuild etc. requests from the server somehow. once allowing server ips thats running well again it seems.",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:47.554Z"
+    },
+    {
+      "content": "I wish I was in a position to even consider k8s. struggling with docker, compose, networking, docker-networks. even when using higher level helpers or possibly because of it. trying to get several projects and things done on like 37 different fronts. just today I feel like I discovered a misconfigured mac/network/ip from a hetzner cloud neighbor potentially. either that or it's on my end or both.\n\nlooks like my coder install did not like the emergency recovery yesterday possibly caused by filled disk or I suspect windmill memory/fs cgroup issue. erratic workspace launches. times and healthchecks look way off as nothing was properly shutdown, just emergency snapshot/recovery. pretty sure pgsql db is most certainly botched. sprinkle a global hetzner robots outage and/or misconfigured cloudflare and dns records ontop and you're done: the maximum, multi-layered overload and confusion is served.\n\nnot to mention some actual bugs that play into things into already brittle understanding.\n\nshould really setup a barebones sandbox with vanilla docker, docker-networks, vanilla traefik, vanilla nginx etc. on the side to catch up on that side. but even improving on that end it seems like there's no way around vastly improving my \"vanilla-networking\" theory as well.\n\nk8s feels like 37 layers far away. entirely out of reach in this sort of context or level. 😄",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:48.622Z"
+    },
+    {
+      "content": "Reading what you wrote, you are in a deep bit of complexity already. But, instead of fighting the complexity, k8s gives you paths you simply have to learn, which are complex. In other words, you are fighting complexity so things barely work. If you learn k8s, you learn complex thing so they work much better and even easier in the end. \n\nI also used to think k8s was too complex. Now, using it for a while, I don't know how I would get the things it does done myself any other way.  It's like the difference between giving a man a fish to eat, or teaching him how to fish. Learning k8s is learning how to fish. 🙂",
+      "author": "smolinari",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:49.264Z"
+    },
+    {
+      "content": "albeit from what I gathered that's more on the \"outer\" layer anyways, you are referring to from within coder in terms of requirements, afaik",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:49.577Z"
+    },
+    {
+      "content": "far from very experienced here. but enjoying dokploy for the intermediary here a lot lately, tbh",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:49.862Z"
+    },
+    {
+      "content": "Hey Scott, I appreciate the feedback. Unfortunately the added complexity for kubernetes isn't really worth it for my deployment. This is just a homelab setup that I'm the only user of so I can get some coding done at work during downtime. The setup works though so I guess i'll just work with it as is.",
+      "author": "gungadean",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:50.284Z"
+    },
+    {
+      "content": "I just setup webhook notifications, they trigger for inbox but I suppose discord is not intended as a webhook notification target?\n\n[warn]  notifications.manager.dispatcher.webhook: unsuccessful delivery  status_code=400  response=\"{\\\"message\\\": \\\"Cannot send an empty message\\\", \\\"code\\\": 50006}\"\n\ntest notification comes through in inbox. non-test notifications are not triggered either",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:50.681Z"
+    },
+    {
+      "content": "I hate to say it, but the solution to your problems is Kubernetes. All the problems you are running into (and many more) are solved by k8s. Networking, storage management (which you haven't ran into..... yet), secrets and config management (partially), container lifecycle management, services management, service access, etc.",
+      "author": "smolinari",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:51.064Z"
+    },
+    {
+      "content": "Hey everyone, I just thought I'd share my current setup and see if anyone has any thoughts/recommendations on best practices. I feel there's probably a better way but I just can't think of it as of now. My current setup is that I have a single vm (which has a couple of other containers on it) that uses docker for external services. I'm using traefik hosted on the same system and their docker labels to expose it coder for my domain. I currently have traefik_proxy and coder_backend docker.  In order for to have coder properly communicate with itself, I had to set an alias on the traefik_proxy network for the traefik container itself for the domain of my coder instance which allowed all health checks to complete correct. This made everything work except for the workspace connections themselves. By default, workspaces are added to the default docker network and as a result were not able to access the access url and download the coder agent. To fix this, I had to adjust the docker container terraform template to use the traefik_proxy network so that it has the correct routing for the access url. Now this works fine as of now but ideally to create some separation between the workspaces and the other containers on the vm itself, I'd like to create a separate docker network that the only the coder container and workspaces have access to for better separation between other services. Does anyone have any recommendations for this setup? If anyone wants to see my compose files/terraform configs or wants some clarification, let me know. I wanted to try and not make this too big of a post (even though it's already an essay).",
+      "author": "gungadean",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:52.247Z"
+    },
+    {
+      "content": "I see. not quite sure but probably - seems different or potentially \"lower-level\" mindset/setup than I'm entirely aware of or in need of so far.",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:52.502Z"
+    },
+    {
+      "content": "yea I just use the whole dev-env, ide plus code in order to avoid git for early/usualy \"pocs\" and just practical iteration... as a fully decoupled \"capsule\". I love it as it enables to just not have any installation worries etc.\n\nalso great to setup, clone for new teammates, people learning etc.\n\ntotally unpopular non-daily dev opinion. but I still don't believe instant/constant \"git overhead\" or git... 2-3x \"syncs\" and repo-pushes etc. is genuinely efficient. but I suppose for constant \"prod\" pipelines, higher requirements or more complex setups it surely makes sense.\n\nfor anything low/medium I still think it slows things down a lot. vs. \"organic\" more human-readable, \"oldschool\" setups",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:53.178Z"
+    },
+    {
+      "content": "Docker container templates runs on the coder instance correctly?",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:53.379Z"
+    },
+    {
+      "content": "And do the setups of repos",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:53.600Z"
+    },
+    {
+      "content": "So I wanted to have Hetzner template as a base and provide tooling into a new template with that base",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:53.864Z"
+    },
+    {
+      "content": "ah I see.",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:54.104Z"
+    },
+    {
+      "content": "I’m working on OSS projects and usually I need to spin up powerful hardware",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:54.365Z"
+    },
+    {
+      "content": "For example, I wanted to create a dev environment, what I can replicate easily to do development when needed and have everything dev related setup. I needed to be based on Linux machines, so I’ve updated the Hetzner template to have dynamic options for server types and locations.",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:54.706Z"
+    },
+    {
+      "content": "<@239283881004630016>",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:54.895Z"
+    },
+    {
+      "content": "if there's no \"extra\" or sophisticated intent behind the question, and probably even then, the answer is: yes. you can duplicate/clone both templates and workspaces. obviously edit/extend things during build and setup etc.\n\nI'd recommend the docker container template as it's afaik most recommended for newcomers. if that matches your requirements, preference.\n\nor more about advanced/nested terra/kubernetes topics, dynamic \"template-gen\", so to speak?",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:55.375Z"
+    },
+    {
+      "content": "Quick question, if I want to replicate a dev environment, I need to create a custom template, correct?\nIf I want my template to be based on another, is it possible to extend with custom scripts to prepare the environment?",
+      "author": ".scai",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:55.663Z"
+    },
+    {
+      "content": "- hard to say but in case others run into similar issue: was using template and also workspace names near or at max character limit. might have different \"cause\" but tried with a previous auxiliary, fresh workspace from same template and procedure. issue would also produce \"DNS PROBE POSSIBLE\" on chrome and brave. might be some sort of bug or general dns behaviour? as shortening the workspace name finally resolved the issue",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:02:56.098Z"
+    },
+    {
+      "content": "I'm having issues forwarding public http port using very basic python http.server poc. yesterday it worked. today it suddenly doesn't as with the demo-proxy and currently unable to use deep-subdomains there's this odd url format. (starting with portnr123--xx) any suggestions? yesterday at least it would display gateway/502 landing pages on standard attempt to connect to \"autogenerated\" https url. In order to retry via that page as \"http\" url or switching via web gui \"retry in http\" button.\n\nnow it just instantly tries to search via search engine, it seems. any suggestions to recover that init landing page? or enforce \"http\" url in brave/chrome manually somehow?",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:56.687Z"
+    },
+    {
+      "content": "Is there a way to configure Trusted Domains for code-server in my workspace template file?",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:56.928Z"
+    },
+    {
+      "content": "Hi",
+      "author": "penquin_guy",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:02:57.160Z"
+    },
+    {
+      "content": "nice thanks. that looks like a simpler solution",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:02:57.373Z"
+    },
+    {
+      "content": "You gotta use coder deployment URL in github config, not the workspace URL. then in the template you can use with https://registry.terraform.io/providers/coder/coder/latest/docs/data-sources/external_auth",
+      "author": "gojnimer",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:57.689Z"
+    },
+    {
+      "content": "I ended up resolving this by putting Authentik in between my workspace and github oauth so that i could support a redirect url with regex",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:57.951Z"
+    },
+    {
+      "content": "But because the URL changes depending on the name of the workspace, I keep having to go and update the URL in a few places. What's a better solution to get this working no matter what workspace my web server is running in? Some sort of reverse proxy setup?",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:58.296Z"
+    },
+    {
+      "content": "For example, I'm developing an app which requires Github OAuth and in order to do that I need to provide Github with a URL to my web server",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:02:58.546Z"
+    },
+    {
+      "content": "What is the recommended solution to managing a development environment where testing a feature requires a consistent URL?",
+      "author": "tate.sh",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:58.791Z"
+    },
+    {
+      "content": "could i remotely connect to code-server",
+      "author": "phorcys",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:59.011Z"
+    },
+    {
+      "content": "Yes, i used the Docker-in-Docker (default) template that comes preinstalled. I set my repo in it, authenticated with my gitlab credentials created a `devcontainer.json` and it worked as aspected. I can now just connect to this remote workspace and edit my code 😉 Time to configure and test it further on my pc and laptop 🙂 Thanks for the help so far 🙂 Really appreciate it.",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:02:59.431Z"
+    },
+    {
+      "content": "yes ik it kinda defeats the purpose of code-server but it would still be nice",
+      "author": "fuckingfunny",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:02:59.672Z"
+    },
+    {
+      "content": "could i remotely connect to code-server with vscodium",
+      "author": "fuckingfunny",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:02:59.897Z"
+    },
+    {
+      "content": "There's also a really annoying ism with the way I'm doing containers in my example. When starting containers as I am doing, it builds the container every time. For the base image, it's fine because it doesn't contain a lot. The Latex container is thick and takes a long time to spin up. it would be instant if I took the time to publish it to a registry and used the image directly instead of the Containerfile. It's really nice for iteration, but when you land on an environment, I definitely recommend publishing it to dockerhub or some other registry.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:00.422Z"
+    },
+    {
+      "content": "https://github.com/coder/coder/blob/main/examples/templates/docker-envbuilder/main.tf\n\nI would start off with something like one of these.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:00.723Z"
+    },
+    {
+      "content": "Ahh thanks, im mainly using Docker",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:00.964Z"
+    },
+    {
+      "content": "One more thing. I'm using my personal terraform provider for docker because I'm using podman and there is (was?) a bug that I needed to patch. If you're using Docker, I would recommend using the more common provider by kreuzwerker. Even if you are using Podman, I would recommend giving kreuzwerker's a shot before switching over to mine. I don't keep up with it. If you don't have podman or docker yet, I would recommend just setting up Coder for use in the cloud, and then once you get a feel for it, convert it to on prem if you want.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:01.528Z"
+    },
+    {
+      "content": "As far as the browser hotkeys, there's an option to open it in a 'slim-window' and that SHOULD tell the browser to ignore most shortcuts it normally cares about.\nhttps://registry.terraform.io/providers/coder/coder/latest/docs/resources/app#open_in-1",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:01.876Z"
+    },
+    {
+      "content": "That sounds like what i need",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:02.115Z"
+    },
+    {
+      "content": "It seems you should be able to just install VSCode and the Coder extension, then your workspaces should have a button that you can click that should connect into your VSCode instance so your code is all actually running remotely in a container.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:02.410Z"
+    },
+    {
+      "content": "https://coder.com/docs/user-guides/desktop",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:02.634Z"
+    },
+    {
+      "content": "Ahh nice, its a good starting point to get to know Coder and how this stuff works 😉 Thanks",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:02.885Z"
+    },
+    {
+      "content": "Oh yeah, there's something for that too, but I haven't actually ever used it myself.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:03.166Z"
+    },
+    {
+      "content": "In that example I gave above, I have a base Containerfile which just has git and stuff, and then I have a latex environment which has a bunch of stuff for writing latex documents and compiling them into pdfs. You could create a third one that fits your Ansible tooling.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:03.554Z"
+    },
+    {
+      "content": "Ideal would be that i have some sort of workspace in Coder that i connect to on my laptop (in visual code) then my laptop dies. i get a new laptop, install Visual Code, connect to Coder with its workspace and i can continue my work.",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:03.895Z"
+    },
+    {
+      "content": "I used VSCode in the browser for a bit, but then some short/hot keys get picked by the browser and not in visual code",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:04.158Z"
+    },
+    {
+      "content": "For sure. I just wanted to determine if you were tied to a VM, or if VSCode in the browser would suffice. It sounds like you should be using containers.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:04.428Z"
+    },
+    {
+      "content": "I basiclly wanna replace my Ubuntu Desktop vm with a remote development environment. if that makes sense, haah",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:04.660Z"
+    },
+    {
+      "content": "There are also some libvirt examples if you want to use VMs, but dmacvicar just released v0.9.1 of his terraform provider. It looks amazing, but is TOTALLY different. I am hoping to make the change soon.",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:05.029Z"
+    },
+    {
+      "content": "If you are dead set on using Coder for VMs, that can be done, but it sounds like you should just be using it with containers for your use case. Do you use anything other than vscode and the CLI?\n\nI haven't updated this in a while, but here is an example of how you could do containers, just instead of Latex, you could set up ansible or whatever. \n\nhttps://github.com/bamhm182/Coder-Templates/tree/main/podman-coder-ws",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:05.496Z"
+    },
+    {
+      "content": "I swear there is a webhook that tells Coder to release a new version 30 minutes after I update. 🤣",
+      "author": "bamhm182",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:05.786Z"
+    },
+    {
+      "content": "Hi, im new to Coder but it looks very cool. I have it setup on a vm at home and would like to use this as a remote development solution. Currently i have a dev vm (Ubuntu Desktop) where i have Visual Code installed and i do every thing. Can i connect to a Coder environment and code from there? So that when i have a new laptop orsomething i can just connect to the coder enviroment and continue development? I mostly just use my visual code for editing my personal repo with Ansible roles. nothing fancy.\nI tried to look for a simple template that has things like Ansible lint and git to clone to the repo, but i cant seem to find these.",
+      "author": "graxotv",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:06.383Z"
+    },
+    {
+      "content": "https://github.com/steveyegge/beads - curious if anyone has played with beads and/or tried to get it to work with opencode. I admit the things they're trying to fix are largely issues I've had with both claude code and opencode",
+      "author": "taxilian",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:06.734Z"
+    },
+    {
+      "content": "67 AI",
+      "author": "eggso1",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:06.913Z"
+    },
+    {
+      "content": "",
+      "author": "techwithanirudh",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:07.135Z"
+    },
+    {
+      "content": "If anyone wants a hand with templates, workspace automation, or small bots around Coder, I can help streamline that, just tag me.",
+      "author": "suz00i",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:07.404Z"
+    },
+    {
+      "content": "Hey all, hmm, really cool seeing everyone experimenting with Coder across homelabs, Azure, and Proxmox. \nFrom my experience, caching big images and automating workspace setups is tricky but totally doable with proper layer caching and API token handling.",
+      "author": "suz00i",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:07.780Z"
+    },
+    {
+      "content": "I am a senior fullstack and AI developer with about 8 years of experience building production backends,infrastructure automation and dev tools. Lately I have been working on self‑hosted environments,on‑chain apps and AI‑powered helpers so I am very interested in how you run Coder across Proxmox,k8s,Azure and homelabs. I am happy to help with debugging installs,templates,workspace automation,or small scripts and bots around Coder if that is useful,so feel free to tag me when something breaks or needs tuning.​",
+      "author": "pello0404",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:08.323Z"
+    },
+    {
+      "content": "hi probably a skill and newcomer issue. but it seems not at all or at least not clearly mentioned if that intent or usecase is possible. I have a test running via coder on dokploy, it would be nice if coder offered means to expose a workspace, app and ports publicly to leverage dev environments, including means to run prod apps or services exposed to the internet.\n\nis that something that's planned, possible, intended or any sort of workaround? I'd love to manage dev environments that enable running public web poc's etc.\n\nI've been looking through all I could find, github, yt, docs but it doesn't look like it's possible or intended?",
+      "author": "obeyeveryday",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:08.899Z"
+    },
+    {
+      "content": "you mean labtoo",
+      "author": "calista_hates_mr.jefferson",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:09.081Z"
+    },
+    {
+      "content": "The 'ol faithful Toshiba Satelite.",
+      "author": "phoenixsheppy",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:09.323Z"
+    },
+    {
+      "content": "",
+      "author": "calista_hates_mr.jefferson",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:09.558Z"
+    },
+    {
+      "content": "Hey Coders,\nWe have just finished setting up Devcontainers as Coder workspaces. We have very a simple devcontainer.json file which pulls a base image. The problem is that the base image is very big and the image gets re-pulled between (dev)container restarts. I tried to use `ENVBUILDER_BASE_IMAGE_CACHE_DIR` and `ENVBUILDER_LAYER_CACHE_DIR` and point them to `/cache` on the parent container but it doesn't seem to do anything.\nWhat I would like to achieve is cache the pulled image on a PVC that can be shared between workspaces. Is that possible?",
+      "author": "united_kiwi_42189",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:10.097Z"
+    },
+    {
+      "content": "How do data sources that parameters depend on work at \"new workspace\" time? I'm trying to set some defaults based upon other data source and they seem to be returning empty strings rather than actually evaluating to a value. Don't know if this is a supported use case or not.",
+      "author": "mydudeiamhere",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:10.423Z"
+    },
+    {
+      "content": "you can also just block the network requests to the marketplace i guess",
+      "author": "phorcys",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:10.658Z"
+    },
+    {
+      "content": "i think probably yeah",
+      "author": "phorcys",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:10.882Z"
+    },
+    {
+      "content": "Can i technically do:\n```\nexport EXTENSIONS_GALLERY='{\"serviceUrl\": \"\"}'\n```\nReference: https://coder.com/docs/code-server/FAQ#how-do-i-use-my-own-extensions-marketplace",
+      "author": "raulcxo",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:11.181Z"
+    },
+    {
+      "content": "Are there any documentation on the different flags for installing coder-server. What I am looking to test is a coder-server with no access to the marketplace, and only installed allowed extensions via dotfile.",
+      "author": "raulcxo",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:11.486Z"
+    },
+    {
+      "content": "You can follow this guide from Microsoft's Dev Container team: <https://containers.dev/guide/prebuild>\n\nIt discusses \"prebuild\"ing your Dev Container. If the built image is still large then you'll still be limited by how quickly you can download the image though, so making sure to remove anything unneeded can help there",
+      "author": "this.danielle",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:11.863Z"
+    },
+    {
+      "content": "https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/image",
+      "author": "gojnimer",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:12.100Z"
+    },
+    {
+      "content": "Hello is it possible to cache docker images built by a devcontainer? Because I want to create a docker devcontainer for latex writing and installing the full scheme of livetex takes about an hour, so its not practical to always rebuild it",
+      "author": "greenman999",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:12.433Z"
+    },
+    {
+      "content": "Was using envbox but too much load time for tasks",
+      "author": "gojnimer",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:12.662Z"
+    },
+    {
+      "content": "Im implementing on my template",
+      "author": "gojnimer",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:12.900Z"
+    },
+    {
+      "content": "Hi all, anyone using the podman sidecar DIND technique?",
+      "author": "tx.au",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:13.097Z"
+    },
+    {
+      "content": "Hi all, thanks for Coder. It seems the docs are down (as well as several other pages).\n\nI was wondering how we can duplicate a template (say, one designed for cursor), so we can easily switch to zed instead.",
+      "author": "allancampopiano6868",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:13.395Z"
+    },
+    {
+      "content": "Hey guys, was curious if anyone has coder deployed with Aurora postgres, and how you handle rollback / restore when using IaaC?",
+      "author": "princealii",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:13.643Z"
+    },
+    {
+      "content": "guys i need you to rate my school",
+      "author": "marco_community_manager",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:13.891Z"
+    },
+    {
+      "content": "also i wouldnt use the timebomb command",
+      "author": "calista_hates_mr.jefferson",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:14.111Z"
+    },
+    {
+      "content": "https://sites.google.com/view/grokerton/home",
+      "author": "calista_hates_mr.jefferson",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:14.365Z"
+    },
+    {
+      "content": "guys i need you to rate my school project its grok input and output also most of it only works on pc so leme send rq",
+      "author": "calista_hates_mr.jefferson",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:14.620Z"
+    },
+    {
+      "content": "What kind of features are you looking for? If you don’t need the enterprise features, you can do a self hosted install. OSS is great!",
+      "author": "noeljackson",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:14.891Z"
+    },
+    {
+      "content": "May I ask how much it costs?",
+      "author": "leynos",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:15.076Z"
+    },
+    {
+      "content": "Your pricing page has no pricing",
+      "author": "leynos",
+      "channel": "general",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:15.290Z"
+    },
+    {
+      "content": "Hi <@142025929454125056> , go ahead and fill this out or have your client fill this out: https://coder.com/contact/sales and then it will get routed to the proper sales team for that region/vertical.",
+      "author": "austencoder",
+      "channel": "general",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:15.620Z"
+    },
+    {
+      "content": "long story short im working with linode/akamai came across coder.com fell in love with everything about it seen its potential and would like to talk with sales in regards to premium/enterprise pricing",
+      "author": "storm.m",
+      "channel": "general",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:15.934Z"
+    },
+    {
+      "content": "👋 would it be possible* to contact sales team in regards to a canadian bootstrap funded startup company with akamai & linode partnership in development currently?",
+      "author": "storm.m",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:16.189Z"
+    },
+    {
+      "content": "what is the latency like? for some reason coder has ~20ms latency for me even on LAN",
+      "author": "tate.sh",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:17.241Z"
+    },
+    {
+      "content": "im running fully fledged IDEs like CLion and its snappier than i could have ever dreamed of",
+      "author": "insanekane",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:17.536Z"
+    },
+    {
+      "content": "Just wanted to say that Coder with the KasmVNC Plugin is absolutely goated",
+      "author": "insanekane",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:17.772Z"
+    },
+    {
+      "content": "[The link to the blog post](https://discord.com/channels/747933592273027093/1311089472217284608/1446306006127738942) goes to a 404 page. Space Invaders was fun though. Hehehe.. 😄",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:18.130Z"
+    },
+    {
+      "content": "It looks like the dotfiles module doesn't support non-POSIX i.e. fish. I can submit a PR unless it's on the radar or intentional.",
+      "author": "fattyacid4382",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:18.421Z"
+    },
+    {
+      "content": "Your request a demo form needs the css fixing",
+      "author": "beesting1735",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:18.650Z"
+    },
+    {
+      "content": "Hey folks, I think https://github.com/",
+      "author": "this.danielle",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:18.850Z"
+    },
+    {
+      "content": "Hey folks, I think https://github.com/coder/registry/pull/485 and related PRs broke the claude code module compatibility with Tasks, based upon how this should work according to the docs (https://coder.com/docs/@v2.28.3/ai-coder/tasks#option-2-create-or-duplicate-your-own-template). This PR removed the `coder_ai_task` resource from the agentapi module, and it was not added back to claude code module, so now users of  the claude code module need to add this themselves. The docs explicitly say that this shouldn't be necessary.\n\nMight be worth updating the docs and/or the modules to address this. I'm a new coder user and this issue made for a less than ideal eval of the tool, and is probably affecting other people trying to eval coder as well.",
+      "author": "mydudeiamhere",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:19.521Z"
+    },
+    {
+      "content": "Updated Gitpod/Ona comparison",
+      "author": "matthew_43917_07213",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:19.757Z"
+    },
+    {
+      "content": "If there were a docker compose in docker example, I think it would help a lot. Docker in docker isn't really helpful, but docker compose in docker is! I had lots of issues with sysbox-runc at first, just trying over and over to get the *right* configuration, and then getting workspaces to actually shut down properly.",
+      "author": "noeljackson",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:20.145Z"
+    },
+    {
+      "content": "<@336927115318394880> do you mind expanding what was painful about docker in docker for you? For ex., were the docs missing steps, or we didn't cover something, etc.",
+      "author": "david_021557",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:20.417Z"
+    },
+    {
+      "content": "Btw, <@989819749129138177> \nIf you guys need some tester for new features (driver, templates, modules versions and platform), i can help with that, i host coder just for myself and i use it like the whole day for my workspaces (currently on incus, but already tested some other drivers like pure docker, nomad, k8s)",
+      "author": "gojnimer",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:20.820Z"
+    },
+    {
+      "content": "We can definitely do that. <@363022107753578496> can you help in setting up a channel for #registry where each new github release gets published?",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:21.112Z"
+    },
+    {
+      "content": "Hey, guys\n\nOne thing i'm missing a lot in this discord is an announcement channel for registry related updates, i find myself running outdated module configs quite often as i usually pin my images on LTS",
+      "author": "gojnimer",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:21.418Z"
+    },
+    {
+      "content": "<@1412544421777637376>",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:21.613Z"
+    },
+    {
+      "content": "It was really painful for me to get docker in docker working. This is a pretty typical setup, but took me 1-2 weeks to really get something going.",
+      "author": "noeljackson",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:21.900Z"
+    },
+    {
+      "content": "Hey team! I’m currently building [Paladin](https://trypaladin.com/). I noticed the Coder forum is synced to the web with [AnswerOverflow](https://www.answeroverflow.com/). Paladin makes forums cleaner, easier to browse, and simpler to moderate directly from the web.\n\nIt’s completely free to use and can either complement your existing setup or run on its own. If you want, you can try it yourself in a few minutes, or I can spin up a demo and show you how it works, no pressure either way 😀",
+      "author": "rivuslabs",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:22.419Z"
+    },
+    {
+      "content": "",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:22.589Z"
+    },
+    {
+      "content": "Ow wow, this sounds awesome 🥳🥳🥳",
+      "author": "luhuhukas",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:22.829Z"
+    },
+    {
+      "content": "",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:22.996Z"
+    },
+    {
+      "content": "Shared Workspaces too: https://github.com/coder/coder/discussions/18992",
+      "author": "benpotter",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:23.268Z"
+    },
+    {
+      "content": "We have created a public discussion for a Secrets feature, please leave any feedback!\n https://github.com/coder/coder/discussions/17965",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:23.543Z"
+    },
+    {
+      "content": "A workspace readme would be a great",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:23.763Z"
+    },
+    {
+      "content": "A workspace readme would be a great addition! Like coder_metadata but in it's own box like the resource logs and the build timeline. Of course with markdown support.",
+      "author": "daschatten",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:24.020Z"
+    },
+    {
+      "content": "Add health check url option please, my",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:24.248Z"
+    },
+    {
+      "content": "An option to switch the logo back to the",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:24.471Z"
+    },
+    {
+      "content": "Add health check url option please, my coder instance is broken 👍",
+      "author": "b_w_d",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:24.700Z"
+    },
+    {
+      "content": "An option to switch the logo back to the old one would be fun 😅",
+      "author": "null.username",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:24.935Z"
+    },
+    {
+      "content": "",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:25.098Z"
+    },
+    {
+      "content": "The link to the changelog [in the latest",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:25.322Z"
+    },
+    {
+      "content": "The link to the changelog [in the latest release announcement](https://discord.com/channels/747933592273027093/984553991545446411/1372733429967491174) is broken.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:25.619Z"
+    },
+    {
+      "content": "hey all!\nI've been working on a Coder plugin for the Elgato Stream Deck as a side project and wanted to collect feedback from the community! :-)\n\n(sorry for the wide aspect ratio lol)\nhttps://youtu.be/AS3u9WbUSug??",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:25.974Z"
+    },
+    {
+      "content": "Hey all!",
+      "author": "this.danielle",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:26.208Z"
+    },
+    {
+      "content": "Hey all! \nI recently start implementing Coder for our team. I'm looking to set it up in a way that we have a central template, but allow product teams to define things like their VS Code extensions in their .devcontainers.json. I started down the route of using envbuilder, but see some limitations in the devcontainer support of that project.\nThis is really an open question to see if any of you have implemented something similar that honors the full devcontainers spec, and if so how you went about it?",
+      "author": "lornest",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:26.661Z"
+    },
+    {
+      "content": "Looking forward to see similar updates in AI stuff https://www.youtube.com/watch?v=8cKfBuJvByc Btw i find coder while searching eclipse che and it wasnt supported on k3s and just end up here. But honestly, so far so good. Actually great.\n\nI develop chrome extensions currently setup kasm with desktop, now configuring..  I just heard jfrog from your videos but looks not opensource.. I'm doing my setup gitlab ce etc. Love to have quick link in gitlab tickets/issues which deploy new env like how eclipse che or other pod things does via devcontainers.  Or could have quick link to throw issue to ai. Ai will read ticket spin up server code it maybe in future (idk 3 6 month later :D) it can test then create pr push then kill himself. There are similar paid tools but having this in locally insane idea. \n\nOf course i'm not like enterprice tier company, just simple guy doing some freelance and looking for enhancements on his workflows. Wish you have more and more enterprice custumers and of course less locked feature in the future for us. \n\nYea future dev tools are insanely help devs and i think coder is the tool. Of course we could integrate coder apis with n8n like stuff, pre process requirements etc. Bind the missing gaps, create autonomous agents (locally) and end up one man agency 😄 then all matter is marketing.  (and i really need to learn)",
+      "author": "emircanerkul",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:27.722Z"
+    },
+    {
+      "content": "Starting to use yet another macOS app",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:27.955Z"
+    },
+    {
+      "content": "coder/examples/templates/aws-devcontaine...",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:28.169Z"
+    },
+    {
+      "content": "I needed to add `ec2:DescribeInstanceStatus`  to the  IAM in the [aws-devcontainer](https://github.com/coder/coder/tree/main/examples/templates/aws-devcontainer#required-permissions--policy) starter template, within `\"Sid\": \"VisualEditor0\"`. Does that make sense? I'm running on EKS, and am applying the IAM with Pod Identity Associations with eksctl.",
+      "author": "david_562504",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:28.569Z"
+    },
+    {
+      "content": "feat: use wildcard Host entry in config-...",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:28.797Z"
+    },
+    {
+      "content": "",
+      "author": "dannykopping_85712_86878",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:28.969Z"
+    },
+    {
+      "content": "I posted a help ticket here https://discord.com/channels/747933592273027093/1347007936094015580/1347007936094015580 . I’m happy to talk about it.",
+      "author": "dda01",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:29.282Z"
+    },
+    {
+      "content": "FYI, Bruno contacted me via DM.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:29.531Z"
+    },
+    {
+      "content": "cc: <@1145733116250566678>",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:29.786Z"
+    },
+    {
+      "content": "I signed up for the last webinar: Secure Coding & Enhancing DevEx with Coder. I missed the live seminar and just got an email with a link to the recording. However, the page the link leads to is asking me to register to get access to the video, despite having already registered for the live seminar. \n\nI think that process can be improved. 🙂",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:30.194Z"
+    },
+    {
+      "content": "<@1214139829449916416> - Starting a thread here, so as not to flood [the RFC](https://github.com/coder/coder/discussions/16304).",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:30.534Z"
+    },
+    {
+      "content": "It would be great if coder would support kuberay or flyte out of the box (so with sso etc) and is not running as one workspace but automatically spinning that up on mupltiple pods. So one would from coder via cli and sso can just schedule new workflows (and is more integrated into the coder ui)",
+      "author": "tobi7742",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:30.914Z"
+    },
+    {
+      "content": "Me again. In the template registry, the",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:31.136Z"
+    },
+    {
+      "content": "Thanks. And thankfully, the source code is also posted in the registry, which is what I wanted to go look at with the link to begin with. Saw the source code tab after hitting the link. 🙂",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:31.447Z"
+    },
+    {
+      "content": "I ran into the same problem earlier too, here’s the proper link if you need it: https://github.com/coder/coder/blob/main/examples/templates",
+      "author": "aericio",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:31.732Z"
+    },
+    {
+      "content": "Me again. In the template registry, the links to the Github repos are broken. I tried several and all led to Github's 404 page.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:32.018Z"
+    },
+    {
+      "content": "Hi,",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:32.251Z"
+    },
+    {
+      "content": "Hi,\n\nI might be missing it (so do correct me if I am wrong), but I would like to see what template a workspace was created with in the workspace. I saw that I can filter the workspace list with the template used and that is great. But, I'd also like to see the template used as information in the workspace itself.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:32.646Z"
+    },
+    {
+      "content": "<@536551162200195092> thanks so much for your feedback. That was a great run through of you experience.",
+      "author": "marco_community_manager",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:32.905Z"
+    },
+    {
+      "content": "Hi, I’m a DevOps engineer working for a",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:33.155Z"
+    },
+    {
+      "content": "Hi, I’m a DevOps engineer working for a small business.\nAfter using Coder.com for a month (with the enterprise license trial), I’d like to share some feedback.\n\n## Why I Chose Coder\nMy team is small, with only a few permanent members, while most contributors come and go. I opted for devcontainers or cloud development primarily to reduce costs and onboarding time for these temporary contributors.\n\nI prioritized Coder because it offers a self-hosted and self-managed solution.\n\nTL;DR: A self-hosted and self-managed solution that enables one-click-ready-to-dev setups.\n\n## First Impressions\nThe first thing that caught my attention was the documentation, which seemed detailed and comprehensive. It was easy to set up using Helm (my preferred method), and the interface was designed to be user-friendly—even for the most monkey users.\n\nHowever, the documentation wasn’t as complete as it appeared. There’s a relationship between the Coder repo and the Envbuilder repo, but Envbuilder is rarely mentioned in the docs. To get things working, I had to piece together information from the Coder docs and the `readme.md` of Envbuilder.\n\n## Features Overview\nThe features of Coder are what inspired me to write this feedback.\n\nFirst, support terraform  in templates. If you’re familiar with Terraform, you literally can practically do anything with it. Second, greate flexibility. Coder provides two powerful resources: `coder_app` and `coder_script`. `coder_script `allows you to execute scripts. `coder_app` enables open access to ports when necessary.\n\nThe GitHub repo `coder/modules` contains Terraform modules to help you enhance your templates. However, I wouldn’t recommend using them directly due to their instability. Instead, I suggest customizing the `coder_app` and `coder_script` resources based on these modules before applying them to your templates.\n\nAdditionally, Coder offers permission hierarchies for templates and workspaces, though they didn’t significantly affect my experience.\n\n## My Experience\nIt took me a week to set up a cloud development environment to achieve a one-click ready-to-dev experience for new users.\n\nAfter discovering the power of Terraform, I set up additional one-click options for creating JupyterLab, etc, ...nearly anything else I needed.\n\n## Comparison with Similar Platforms\n### Lapdev\nLapdev builds from devcontainer.json remarkably fast and doesn’t seem to have the limitations I faced with Envbuilder. However, it doesn’t yet support Kubernetes self-hosted setups (strangely), so I reluctantly ruled it out.\n\n### GitHub Codespaces\nCoder clearly aims to be an alternative to Codespaces, so there’s not much to elaborate here.\n\n### Gitpod\nGitpod stopped supporting self-hosted environments around late October 2024. While that’s a loss for the self-hosted community, it aligns with Gitpod’s focus on other areas.\n\n### JetBrains Space\nDoesn’t allow self-managed setups.\n\n\n## Conclusion\nCoder provides a solution that meets the requirements I was looking for: self-hosted, self-managed, highly flexible, and easy to use for new users.\n\nHowever, its build times are incredibly slow—so slow that the existence of Lapdev only highlights this shortcoming further.",
+      "author": "lunalovegood_",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:35.339Z"
+    },
+    {
+      "content": "Getting error on starter template",
+      "author": "_nithesh_10",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:35.550Z"
+    },
+    {
+      "content": "",
+      "author": "_nithesh_10",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:35.751Z"
+    },
+    {
+      "content": "IDE Support",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:35.953Z"
+    },
+    {
+      "content": "Just curious, will the Coder team consider including Agentic IDEs like Cursor AI or Windsurf?",
+      "author": "joelynnnnn",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:36.201Z"
+    },
+    {
+      "content": "Why would some features be active in a",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:36.392Z"
+    },
+    {
+      "content": "Why would some features be active in a Premium plan and not Enterprise and yet the Enterprise plan isn't being offered to new customers? Let's say you have a future paying customer, who reads that release blog, but doesn't go and read that paragraph above. Then she goes to the website to look for the differences between licenses and doesn't find the Enterprise version, then it's a probable source of confusion and confusion causes extra work. 🙂 Just trying to help here. 🙏🏻",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:36.857Z"
+    },
+    {
+      "content": "What is the reasoning to not simply move Enterprise customers to the Premium plan?",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:37.095Z"
+    },
+    {
+      "content": "Hmm..ok. I found this reading a bit deeper. \n> Although we are no longer offering the Coder's Enterprise plan to new customers, existing customers with an Enterprise license can continue to use and renew their current features and plan. To learn more about Coder Premium, please contact your Customer Success Manager.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:37.503Z"
+    },
+    {
+      "content": "So, I'm a bit confused as to what is going on with these versions. 🤔",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:37.721Z"
+    },
+    {
+      "content": "In the release blog for 2.18.0, there is a reference to the new \"Premium\" license offering, which I admittedly only flew over. Instead, I went to pricing, yet I only see OSS and Premium being offered as options. \n\nAnd, when I look at the features list in the latest blog on the 2.18.0 release, I see this:",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:38.145Z"
+    },
+    {
+      "content": "Currently is SysBox broken when using runc > 1.1.15. See https://github.com/opencontainers/runc/issues/4542",
+      "author": "mrpeacock",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:38.428Z"
+    },
+    {
+      "content": ".",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:38.647Z"
+    },
+    {
+      "content": "like this",
+      "author": "fei_dun",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:38.878Z"
+    },
+    {
+      "content": "HI,coder team,I am a developer and I hope to deploy coder to meet my mobile development needs.but when I creat workspaces always waiting.I don't know why",
+      "author": "fei_dun",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:39.165Z"
+    },
+    {
+      "content": "Could you open a thread in <#1006346052317753414> and elaborate your issue and how we can reproduce it. Thanks.",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:39.429Z"
+    },
+    {
+      "content": "copy paste not working in android?",
+      "author": "ueki0021",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:39.639Z"
+    },
+    {
+      "content": "Hi Coder Team,\n\nthe new build timeline is a step into the right direction! Congrats",
+      "author": "mrpeacock",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:39.888Z"
+    },
+    {
+      "content": "We’re looking for talented people to help us build Coder. If you think you have the skills, let’s chat!",
+      "author": "bruno.quaresma",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:40.176Z"
+    },
+    {
+      "content": "",
+      "author": "bruno.quaresma",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:40.350Z"
+    },
+    {
+      "content": "it's maybe because it's expecting stats when you don't have any",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:40.592Z"
+    },
+    {
+      "content": "yeah that sounds like a bug, because it's supposed to do what you said",
+      "author": "phorcys",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:40.827Z"
+    },
+    {
+      "content": "Interesting. Refreshing the page, the placeholder isn't there anymore. 🤔",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:41.043Z"
+    },
+    {
+      "content": "This is very, very picky. But, the pulsating placeholder graphic (below the VS Code Desktop and Terminal buttons) in a workspace should only be shown, if some data for that place has come in terms of the final container starting. Otherwise, it should go away, after the container is finished building and initializing and no data is to be filled in.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:41.436Z"
+    },
+    {
+      "content": "Envbuilder was surprisingly easy to include into our Kubernetes workflow and it works perfectly, I can finally say to our devs that we support devcontainers inside k8s. Thank you so much guys! Your project is incredible",
+      "author": "molitann",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:41.767Z"
+    },
+    {
+      "content": "(I guess this is Microsoft, but I also love being able to customize the color theme so it matches whatever I'm pasting to and from....)",
+      "author": "gpetri",
+      "channel": "feedback",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:42.079Z"
+    },
+    {
+      "content": "I also love that it doesn't push AI on me like all the Microsoft, GitHub, Replit, and Google alternatives. Yes I love AI but I hate coding from completions. I'm good enough that they never are, so just let me copy and paste to and from ChatGPT please.",
+      "author": "gpetri",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:42.450Z"
+    },
+    {
+      "content": "I LOVE CODER SO MUCH! I love being able to work anywhere on a dirt cheap chromebook without having to worry about theft or loss. I love only having to pay for instances when I'm using them. I love that all my colleagues instantly see the value unlike most all other tools I like. I want to marry the entire development team.",
+      "author": "gpetri",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:42.838Z"
+    },
+    {
+      "content": "Hi <@539502888741765120> would you mind moving this to <#1006346052317753414> and provide details about your Coder setup and template?",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:43.130Z"
+    },
+    {
+      "content": "",
+      "author": "alsmadi2024",
+      "channel": "feedback",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:43.329Z"
+    },
+    {
+      "content": "I am trying to run my workspace and getting the error below",
+      "author": "alsmadi2024",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:43.566Z"
+    },
+    {
+      "content": "Automation",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:43.742Z"
+    },
+    {
+      "content": "worked like a charm",
+      "author": "anubisx96",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:43.952Z"
+    },
+    {
+      "content": "I tried to use this template workspace (Cuda/PyTorch/TensorFlow) and got no space left in device through installation",
+      "author": "alsmadi2024",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:44.229Z"
+    },
+    {
+      "content": "Didn't realise the port said in CODER_HTTP_ADDRESS was required to be used to reach CODER.\nOther than that, thank you for all of your hard work!",
+      "author": "mtfplex",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:44.529Z"
+    },
+    {
+      "content": "👋 Hey @everyone!\n\nWe’ve just released a new GitHub Action to streamline the setup of Coder environments in your GitHub workflows: [coder/setup-action](https://github.com/marketplace/actions/setup-coder).\n\nWe’d love to hear your thoughts! Try it out and let us know any feedback or suggestions you have to improve it. Your input will help us refine the experience!",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:44.946Z"
+    },
+    {
+      "content": "Just upgraded to the latest version and all is well. 🙂 Coder is a very awesome piece of work.",
+      "author": "smolinari",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:45.204Z"
+    },
+    {
+      "content": "Awesome, thanks <@989819749129138177>. I will look for the contributing guide before I try creating a PR or anything.",
+      "author": "lucifer123476",
+      "channel": "feedback",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:45.481Z"
+    },
+    {
+      "content": "Templates are bundled with Coder for now. You can see them at https://github.com/coder/coder/tree/main/examples/templates\nWe are happy to accept contributions or improvements.",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:45.786Z"
+    },
+    {
+      "content": "Was looking into creating an issue for this on Github, but it seems there is no public repository for templates.",
+      "author": "lucifer123476",
+      "channel": "feedback",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:46.019Z"
+    },
+    {
+      "content": "Hey folks, was just looking into using the [incus template](https://registry.coder.com/templates/incus) and noticed that it is quite out-of-date and is throwing errors when using it. I managed to resolve the errors and update the versions of modules being used in the template.\nHere is the one that seems to be working fine. This is using archlinux as the default image and is installing few extra packages like node, npm, etc. via cloud-init",
+      "author": "lucifer123476",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:46.493Z"
+    },
+    {
+      "content": "Good morning, looks like someone beat me to it. Just noticed that the same issues was logged in Github few hours back.",
+      "author": "lucifer123476",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:46.753Z"
+    },
+    {
+      "content": "Thank <@1014062945849843753> please open an issue here https://github.com/coder/modules",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:47.007Z"
+    },
+    {
+      "content": "Hey guys, I was just setting up new templates in coder and noticed that the [git_clone](https://registry.coder.com/modules/git-clone) module fails to clone the repository if ssh url is passed to it and the workspace container does not contain the `.ssh/known_hosts` file with entry of the git provider (github/gitlab).\nThe error that gets shown in the workspace logs is misleading because it says \"Host key verification failed\" and asks the user to add the key to Github or Gitlab.",
+      "author": "lucifer123476",
+      "channel": "feedback",
+      "topic": "bug-report",
+      "timestamp": "2026-01-19T02:03:47.502Z"
+    },
+    {
+      "content": "autofill dotfiles repos",
+      "author": "matifali",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:47.722Z"
+    },
+    {
+      "content": "my team all have dotfile repos and they are  super useful , however having to paste the repo url on every workspace creation is a pain. Could the user profile have a class of variables that are passed  -var style to the tf?",
+      "author": "intelligentmanatee",
+      "channel": "feedback",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:48.059Z"
+    },
+    {
+      "content": "Ai",
+      "author": "cooper056746_99443",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:48.590Z"
+    },
+    {
+      "content": "So",
+      "author": "cooper056746_99443",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:48.824Z"
+    },
+    {
+      "content": "You",
+      "author": "penquin_guy",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:49.053Z"
+    },
+    {
+      "content": "i'm trying to update my templates and get rid of ai_task coder_parameter",
+      "author": "gojnimer",
+      "channel": "ai",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:49.283Z"
+    },
+    {
+      "content": "is coder_ai_task already avaiable on LTS coder provider registry?, my TF is not finding it on the newest version",
+      "author": "gojnimer",
+      "channel": "ai",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:49.529Z"
+    },
+    {
+      "content": "apologies for the lack of response -- here are some resources from our community members:\n- https://thetechenabler.substack.com/p/running-a-vibe-code-platform-coder?triedRedirect=true\n- https://discord.com/channels/747933592273027093/1392881154562068541",
+      "author": "phorcys",
+      "channel": "ai",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:49.918Z"
+    },
+    {
+      "content": "Was anyone able to create Ai tasks agents but instead of going to Anthropic's server directly, using an AWS Bedrock Claude AI Agent? If so, I have some questions on the implementation to control information on AI while leveraging AWS guiderails in corporation",
+      "author": "jeanmaxime.couture_88027",
+      "channel": "ai",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:50.271Z"
+    },
+    {
+      "content": "One concern I have about AI when it comes to products that offer it.  Is it ultimately kills the core product itself. \n\nExample being GitPod. I don’t think it can ever return as a regular CDE anymore.",
+      "author": "michaelbrewer.eth",
+      "channel": "ai",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:50.588Z"
+    },
+    {
+      "content": "Hello! My company has a Coder platform",
+      "author": "phorcys",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:50.837Z"
+    },
+    {
+      "content": "Hello! My company has a Coder platform already set up and we are looking to implement AI Agents. One concern I have is that we have an on-prem Gitlab instance and I only see mention of Github in the docs. Is this possible to hook up Gitlab or has anyone attempted at doing this? Thanks.",
+      "author": ".4no",
+      "channel": "ai",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:51.168Z"
+    },
+    {
+      "content": "I love the work you’ve been doing, this",
+      "author": "phorcys",
+      "channel": "ai",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:51.392Z"
+    },
+    {
+      "content": "I love the work you’ve been doing, this is exactly what I was looking for! \nHaving a reproducible development environment that can be used by an AI agent is a game-changer. I’ve got everything up and running, including starting workspaces from an external pipeline with custom commands.\n\nHad to fiddle around to make it work on an arm based container host.\n\nI’m now thinking about the best way to export information from a workspace, for example, tracking changes made by an AI agent, or exporting an analysis the agent has done on a bug.\n\nDo you envision something like this being handled via pull requests, or would a more custom approach like an MCP server that sends webhooks make more sense?",
+      "author": "mebusmein",
+      "channel": "ai",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:51.972Z"
+    },
+    {
+      "content": "The v2.21 release has this functionality included: https://coder.com/docs/tutorials/ai-agents",
+      "author": "benpotter",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:52.263Z"
+    },
+    {
+      "content": "Not yet, but that is definitely the goal!",
+      "author": "benpotter",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:52.505Z"
+    },
+    {
+      "content": "Is it currently possible to use speech for input? Maybe it is to far away for now but i think as we solve more and more problems with in a natural language way it seems to be the next step to speek to the LLM directly. I know the Microsoft CoPilot speech extension, but it seem not to work properly.",
+      "author": "mrpeacock",
+      "channel": "ai",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:52.861Z"
+    },
+    {
+      "content": "A quick peek at some of the stuff we have done so far with AI agents in the Coder product!",
+      "author": "benpotter",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:53.145Z"
+    },
+    {
+      "content": "I'll share a demo here soon 🤓",
+      "author": "benpotter",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:53.390Z"
+    },
+    {
+      "content": "We are using Coder workspace with GitHub",
+      "author": "phorcys",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:53.633Z"
+    },
+    {
+      "content": "We are using Coder workspace with GitHub CoPilot (sadly it does not work with code-server as MS permits running in Browser).\n\nWe are also using continue.dev in conjunction with Azure OpenAI (private endpoint). For Azue OpenAI API key we have a API gateway (Gravitee) which injects the key transparently to the developer. So there is no key in Coder workspace.\n\nAnd finally we develop with aider-chat in architect mode.\n\n<@287461413675335690> really looking forward for notifications. Maybe you can spoiler something...",
+      "author": "mrpeacock",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:54.155Z"
+    },
+    {
+      "content": "pre register will reopen anytime?, :3",
+      "author": "gojnimer",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:54.770Z"
+    },
+    {
+      "content": "<@267661647785623572> you'll be able to use it! And yes, it supports Gemini.",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:54.999Z"
+    },
+    {
+      "content": "Blink is interesting. I'm not a Coder Pro customer. Will I be able to use it? Does it support Gemini?",
+      "author": "smolinari",
+      "channel": "blink",
+      "topic": "question",
+      "timestamp": "2026-01-19T02:03:55.244Z"
+    },
+    {
+      "content": "I've made a new server for Blink so y'all can give feedback without flooding the Coder Discord. I've updated the homepage of Blink with a bit of our build philosophy.\n\nCheck it out, and join the Discord: https://blink.so\n\nAll future updates will be in that Discord.",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:55.622Z"
+    },
+    {
+      "content": "excited to check this out!",
+      "author": "prydt",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:55.871Z"
+    },
+    {
+      "content": "Would love to check this out, been using Coders tools for a long time now",
+      "author": "null.username",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:56.146Z"
+    },
+    {
+      "content": "Awesome! Working on it now - should happen soon(ish).",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:56.410Z"
+    },
+    {
+      "content": "Looking for access to blink 🙂 Currently evaluating a lot of AI tools and loved the demo",
+      "author": "diesel_dad",
+      "channel": "blink",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:56.659Z"
+    },
+    {
+      "content": "Would love the beta",
+      "author": "techwithanirudh",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:56.888Z"
+    },
+    {
+      "content": "Hey",
+      "author": "techwithanirudh",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:57.110Z"
+    },
+    {
+      "content": "Thanks for being part of the Cloudflare announcement today! I'm interested in trying Blink.",
+      "author": "awtom",
+      "channel": "blink",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:57.346Z"
+    },
+    {
+      "content": "I'll ping in here once I can open the gates up! ETA is either tomorrow, or the day after.",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:57.620Z"
+    },
+    {
+      "content": "<a:ghostwave:830492795806023730> Would love to get in to the beta",
+      "author": "byterust",
+      "channel": "blink",
+      "topic": "support-request",
+      "timestamp": "2026-01-19T02:03:57.873Z"
+    },
+    {
+      "content": "I should probably use blink a bit more",
+      "author": "this.danielle",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:58.123Z"
+    },
+    {
+      "content": "Thanks. I would make sure to provide feedback too",
+      "author": "hamayreh",
+      "channel": "blink",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:58.340Z"
+    },
+    {
+      "content": "Blink is very early access and will have bugs. I'll try to open the gates to y'all by tomorrow AM for invites!",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:58.642Z"
+    },
+    {
+      "content": "Hi. I’m interested in blink. Would love an invite",
+      "author": "hamayreh",
+      "channel": "blink",
+      "topic": "feature-request",
+      "timestamp": "2026-01-19T02:03:58.869Z"
+    },
+    {
+      "content": "big blink fan",
+      "author": "thy",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:59.104Z"
+    },
+    {
+      "content": "Thanks for the invite. Would like to give [blink](https://blink.so) a go!",
+      "author": "andrewe.ca",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:59.380Z"
+    },
+    {
+      "content": "👋 after the presentation I'll get everyone in",
+      "author": "kylecarbs",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:03:59.637Z"
+    },
+    {
+      "content": "Also interested! Nice Preso team",
+      "author": ".vindice",
+      "channel": "blink",
+      "topic": "praise",
+      "timestamp": "2026-01-19T02:03:59.854Z"
+    },
+    {
+      "content": "hey there",
+      "author": "anti_m8",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:04:00.087Z"
+    },
+    {
+      "content": "👋",
+      "author": "nibalic",
+      "channel": "blink",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-19T02:04:00.319Z"
+    },
+    {
+      "content": "I'm trying to automate the instantiation of P5.48xlarge nodes, which require capacity block reservations. \n\nIs there a reference terraform config that:\n\n1. Lets me pick a region\n2. Requests the capacity block\n3. Spins up the instance once the capacity block is allocated. \n\n\nI know how to do this if the capacity block ID is known at the time the script is launched, but I want a full end-to-end solution without having to manually create a capacity block in the AWS website. Currently my engineers need to request for me to create capacity blocks, it so it would be great if they could provision it themselves through coder. Does coder support something like this?",
+      "author": "swiftlynx",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "terraform capacity block automation",
+      "timestamp": "2026-01-19T02:04:03.890Z",
+      "threadId": "1461532558545260657",
+      "threadName": "Automatically provisioning capacity block in terraform script for AWS"
+    },
+    {
+      "content": "Not sure what could be happeing. Without logs. Try enabling Verbose logs with `CODER_VERBOSE`",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "coder setup issue",
+      "timestamp": "2026-01-19T02:04:05.259Z",
+      "threadId": "1460370180155769075",
+      "threadName": "Coder agents disconnect when the server is restarted on version 2.28.6"
+    },
+    {
+      "content": "Having an issue testing a newer release, where Coder agents disconnect and are unable to successfully reconnect when the server is restarted on version 2.28.6. This is not an issue on our prod instance version of 2.19.0. \n\nErrors in the agent logs more or less spit out tailscale errors saying “peerid is overwritten”, but there’s no context given in the coder logs themselves. \n\nAny help would be appreciated, thanks!",
+      "author": "terrabyteian",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "coder agent connection issues",
+      "timestamp": "2026-01-19T02:04:06.745Z",
+      "threadId": "1460370180155769075",
+      "threadName": "Coder agents disconnect when the server is restarted on version 2.28.6"
+    },
+    {
+      "content": "Good to know about the Docker update in 25.10, that actually simplifies things!\n\nIf you switch to the LinuxServer.io code-server image, it supports custom startup scripts right out of the box. You don’t need an external script or to rebuild the image, just drop a file in the right folder and it’ll run automatically on container start.\n\nSetup Steps\n1. Find your config volume path In the TrueNAS Apps UI, check where /config is mounted on your host. It should look something like:\n/mnt/pool/apps/code-server/config\n\n2. Create the startup script on the host (inside the config volume):\nmkdir -p /mnt/pool/apps/code-server/config/custom-cont-init.d\nnano /mnt/pool/apps/code-server/config/custom-cont-init.d/install-python.sh\n\n3. Add this content to the script:\n#!/bin/bash\necho \"Installing Python...\"\napt-get update\napt-get install -y python3 python3-pip python3-venv\necho \"Python installation complete!\"\n\n4. Make it executable:\nchmod +x /mnt/pool/apps/code-server/config/custom-cont-init.d/install-python.sh\n\n5. Restart the container\nThe LinuxServer.io image will automatically run any scripts in that custom-cont-init.d folder on startup. \n\nOptional: After restarting, check the container logs for:\nPython installation complete!\n\n📘 Docs: https://docs.linuxserver.io/general/container-customization/#custom-scripts",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "custom container scripts",
+      "timestamp": "2026-01-19T02:04:09.522Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "hey thanks for the explanation one small correction, TrueNAS SCALE switched to regular docker sometime ago along the version updates,\nso i'm using ver 25.10 which is based on normal docker not Kubernetes (Helm charts)\n\nany way you clearly understood the issue exactly i'm thinking  to try option 1 i'll be happy if you can send the link for the script\ni was using the official package because i wanted to keep it vanilla, but as it seems i must switch to LinuxServer.io package. \nsince it's imposable to use apt command almots the way this configured\n\ni already did use python env but it not working without a python install so i added a small bash script to install at startup  but it's is just a small temporary workaround",
+      "author": "afikzach",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "truenas docker setup issues",
+      "timestamp": "2026-01-19T02:04:11.417Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "Make sure it's executable (chmod +x). This only works if your code-server app is based on the LinuxServer.io image.\n\n2. Install Python to a persistent path\nUse pyenv or compile Python to a location inside /config (e.g., /config/.local/). Add to your .bashrc in /config:\n\nexport PATH=\"/config/.local/bin:$PATH\"\n\nThis survives reboots without needing to reinstall.\n\n3. DOCKER_MODS (limited applicability)\nIf your app is LinuxServer.io-based AND the TrueNAS app UI lets you add custom environment variables:\n\nDOCKER_MODS=linuxserver/mods:universal-package-install\nINSTALL_PACKAGES=python3|python3-pip\nMany TrueNAS catalog apps don't expose this option without editing the Helm chart (advanced).\n\n4. Consider Jailmaker (recommended alternative)\nhttps://github.com/Jip-Hop/jailmaker creates persistent Debian jails on TrueNAS SCALE where all installations survive reboots. This avoids fighting the Kubernetes abstraction layer entirely and gives you a normal Linux environment.\n\nBottom line\nOption 1 (if LinuxServer.io image) or Option 4 (Jailmaker) are probably your best bets. The TrueNAS Apps system abstracts away a lot of container configuration, which can make customizations like this frustrating.",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "truenas environment issues",
+      "timestamp": "2026-01-19T02:04:13.919Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "Yeah, that's exactly the issue - the container filesystem is ephemeral and only mounted volumes (like /config) persist.\n\nWhen you install Python via apt or similar inside the code-server container, it installs to the container's root filesystem, which gets reset on every reboot. TrueNAS only persists data in explicitly mounted volumes.\n\nTrueNAS SCALE Apps use Kubernetes (Helm charts), not plain Docker. This means Docker-specific workarounds you might find online don't always apply, and the UI may not expose all the configuration options you need.\n\nWorkarounds\n1. Startup script in persistent storage (if using LinuxServer.io image)\nLinuxServer.io containers look for scripts in /config/custom-cont-init.d/ and run them on startup. Create a script there:",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "persistent container setup",
+      "timestamp": "2026-01-19T02:04:15.778Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "I’m running Code Server on TrueNAS SCALE using the Apps (bulletin apps) repository, not Portainer or similar. I was able to install Python inside the Code Server container with \"sudo apt install -y python3 python3-pip\", but the problem is that it doesn’t persist after a reboot. Every time the system restarts, I have to reinstall Python and any packages I installed.\n\nIt seems the container’s filesystem is ephemeral, so changes made inside the container are lost on reboot. I’m looking for a workaround to make Python and its packages persistent in Code Server",
+      "author": "afikzach",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "code server persistence issue",
+      "timestamp": "2026-01-19T02:04:17.436Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "",
+      "author": "afikzach",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "no request message was provided.",
+      "timestamp": "2026-01-19T02:04:18.454Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "i'm trying to install python to code server with the bulletin apps repository of truenas, not dockge or portainer. i was able to do but without persistence during bash command on boot, but i have  to reinstall after each reboot. if someone had faced the this issue i'll be happy for some workaround",
+      "author": "afikzach",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "python install issues",
+      "timestamp": "2026-01-19T02:04:19.783Z",
+      "threadId": "1460305860805923002",
+      "threadName": "code server on truenas installing python"
+    },
+    {
+      "content": "alr thanks",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "no response",
+      "timestamp": "2026-01-19T02:04:21.086Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "let me get a peek again",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "request explanation",
+      "timestamp": "2026-01-19T02:04:22.077Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "oh, by the way.. could I expect to get help sometime soon or am I just on my own? I've been waiting a while and this was sort of my last resort asking here, as I've been going at this problem for a while, so I may need to just find an alternative or somehow figure it out myself if you guys are just too busy. I just don't want to wait on help any longer if I know that I realistically will not get it",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "help response timeliness",
+      "timestamp": "2026-01-19T02:04:23.604Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "<@633747651774382112> I appreaciate you givin us feedback. Always looking to improve this server.",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "feedback and improvement",
+      "timestamp": "2026-01-19T02:04:24.726Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "Alright, I appreciate y'all's effort!",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "no main topic extracted",
+      "timestamp": "2026-01-19T02:04:25.764Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "Keep the feedback coming.",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "feedback request",
+      "timestamp": "2026-01-19T02:04:26.739Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "This year, we're focused on improving our response rate in the server and getting more feedback from the community so we can make it better.",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "improving response rates",
+      "timestamp": "2026-01-19T02:04:27.914Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "Hi <@633747651774382112> thanks for the feedback. Love this, because this makes us aware of where we can improve.",
+      "author": "marco_community_manager",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "appreciation and improvement feedback",
+      "timestamp": "2026-01-19T02:04:29.122Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "Alright",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "no main topic was provided",
+      "timestamp": "2026-01-19T02:04:30.177Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "i did have a quick glance at your issue and honestly there's too many moving parts for me to be able to give it a proper look right now 😅",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "too many complex issues",
+      "timestamp": "2026-01-19T02:04:31.382Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "nah don't worry i totally get it",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "no response needed",
+      "timestamp": "2026-01-19T02:04:32.430Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "Alright,.sorry to come off a bit rude, I'm not trying to insult y'all, I'm just really sick of seeing companies try to shoehorn AI into things where I feel like I it's just very forced",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "forced ai adoption",
+      "timestamp": "2026-01-19T02:04:33.713Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "yeah <@633747651774382112>, sadly we haven't had human resources truly allocated to the community for a bit of time now, and lots of things are shifting around internally as well which is what's causing this situation",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "lack of hr allocation",
+      "timestamp": "2026-01-19T02:04:35.019Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "The only things that get any sort of response whatsoever have to do with a bot that writes code for you, which to be completely frank is utterly useless to me. If I wanted some machine writting crappy code for me, I wouldn't be using Coder",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "\"coder bot functionality\"",
+      "timestamp": "2026-01-19T02:04:36.360Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "True... I was hoping I would find help, and was excited when I saw that coder has a discord server, but, I asked a question a couple days ago and I haven't gotten a single response still :/ I see that others also have posts too that have been left even longer and been completely ignored...",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "discord server support issues",
+      "timestamp": "2026-01-19T02:04:37.741Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "- There are plenty of things that could be added, that contribute to the server growth as well.",
+      "author": "virtualst0rm",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "server growth ideas",
+      "timestamp": "2026-01-19T02:04:38.828Z",
+      "threadId": "1459270377531244669",
+      "threadName": "This server is pretty good, However it lacks activity."
+    },
+    {
+      "content": "<@989819749129138177> hey, sorry to ping, but I thought maybe you could look at this issue real quick and maybe you might be able to help me figure out what's going on?",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "issue with workspace setup?",
+      "timestamp": "2026-01-19T02:04:40.473Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "i don't see a message provided. please provide the help request, and i'll be happy to assist you!",
+      "timestamp": "2026-01-19T02:04:41.969Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "When I run this in coder however....\n```\nWaiting for sysbox processes to startup...\n\nWaiting for dockerd to startup...\n\nCreating TUN device\n\nPulling from brickmasterhunt/envbuilder\n\nExtracting: [===================>                               ]   13.7MB/34.76MB\n\nGetting image metadata...\n```\nStill waiting here forever",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "coder startup issues",
+      "timestamp": "2026-01-19T02:04:43.331Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "Actually just added this, and ig it works here?\n```dockerfile\nFROM tianon/sleeping-beauty:nolibc AS source\n\nFROM ghcr.io/coder/envbuilder:latest AS final\n\nCOPY --from=source --chown=coder:coder /sleeping-beauty /usr/local/bin/sleep\n\nENV KANIKO_DIR=/.envbuilder\nENV DOCKER_CONFIG=/.envbuilder\n\nENTRYPOINT [\"/.envbuilder/bin/envbuilder\"]\n\n```",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "dockerfile setup issue",
+      "timestamp": "2026-01-19T02:04:44.917Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "why?",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "no main issue found",
+      "timestamp": "2026-01-19T02:04:45.888Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "<@363022107753578496> I've made the Dockerfile like this:\n```dockerfile\nFROM tianon/sleeping-beauty:nolibc AS source\n\nFROM ghcr.io/coder/envbuilder:latest AS final\n\nCOPY --from=source --chown=coder:coder /sleeping-beauty /usr/local/bin/sleep\n\n```\n\nand now the workspace seems to just stay like this forever:\n```\nWaiting for sysbox processes to startup...\n\nWaiting for dockerd to startup...\n\nCreating TUN device\n\nPulling from brickmasterhunt/envbuilder\n\nExtracting: [=============>                                     ]  9.372MB/34.76MB\n\nGetting image metadata...\n```",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "docker workspace stuck loading",
+      "timestamp": "2026-01-19T02:04:47.727Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "oh, btw is the boostrap script running twice?",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "bootstrap script issue",
+      "timestamp": "2026-01-19T02:04:48.723Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "gl with this haha, honestly i'd advise to try to find a solution that doesn't involve either envbuilder or envbox to reduce the nested layers of complexity because you're probably gonna pull some hairs off your head",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "env builder envbox issues",
+      "timestamp": "2026-01-19T02:04:50.003Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "the second thing causing envbuilder to not run is probably that envbox doesn't respect the entrypoint so maybe you have to do `CODER_BOOTSTRAP_SCRIPT`",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "envbox configuration issue",
+      "timestamp": "2026-01-19T02:04:51.188Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "the way envbuilder works is by destroying the rootfs of the environment it's running in, so i'm not surprised playing with its container image causes issues",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "envbuilder issues",
+      "timestamp": "2026-01-19T02:04:52.332Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "i'd say try doing the opposite, which is use the envbuilder image and copy the `sleep` binary maybe?",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "env variable setup",
+      "timestamp": "2026-01-19T02:04:53.437Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "if you look at how the envbuilder docker image is built that kinda makes sense because you don't just need that binary, you also need a whole lot of other things, and it's building it's own custom filesystem to stay lightweight\n\nhttps://github.com/coder/envbuilder/blob/main/scripts/build.sh",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "envbuilder docker image build",
+      "timestamp": "2026-01-19T02:04:54.835Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "tl;dr is your image does something quite weird preventing envbuilder from running\n\nthis:\n```\ndocker run -it --rm \\\n    -v \"/tmp/envbuilder:/workspaces\" \\\n    -e ENVBUILDER_GIT_URL=https://github.com/coder/envbuilder-starter-devcontainer \\\n    -e ENVBUILDER_INIT_SCRIPT=bash \\\n    brickmasterhunt/envbuilder:latest\n```\ndoesn't work",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "docker envbuilder issues",
+      "timestamp": "2026-01-19T02:04:56.326Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "dw",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "invalid response",
+      "timestamp": "2026-01-19T02:04:57.303Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "thanks for taking the time to help me out",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "no main issue specified",
+      "timestamp": "2026-01-19T02:04:58.344Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "cool",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "no response found",
+      "timestamp": "2026-01-19T02:04:59.354Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "like 10mins",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "time management",
+      "timestamp": "2026-01-19T02:05:00.351Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "alright!",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "no specific issue provided.",
+      "timestamp": "2026-01-19T02:05:01.421Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "I just can't figure it out",
+      "author": "brickmasterhunt",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "need help resolving issue",
+      "timestamp": "2026-01-19T02:05:02.456Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "yea sure wait i gotta walk back home first",
+      "author": "phorcys",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "no main issue extracted",
+      "timestamp": "2026-01-19T02:05:03.538Z",
+      "threadId": "1458897516060741642",
+      "threadName": "Help figuring out why my workspace is not being created, and getting it to."
+    },
+    {
+      "content": "**The `count` meta-argument is a Terraform feature, not Coder-specific.** It's not in the `coder_script` docs because it's a [built-in Terraform meta-argument](https://developer.hashicorp.com/terraform/language/meta-arguments/count) available on all resources.\n\n**Why it's needed:**\n\nLook at line 165 in the aws-linux template:\n```hcl\nresource \"coder_agent\" \"dev\" {\n  count = data.coder_workspace.me.start_count\n  ...\n}\n```\n\nThe agent itself uses `count = data.coder_workspace.me.start_count`. This means:\n- When workspace is **starting**: `start_count = 1` → creates 1 agent → `coder_agent.dev` is a list with 1 element\n- When workspace is **stopping**: `start_count = 0` → creates 0 agents → `coder_agent.dev` is an **empty list**\n\n**Your error occurred because:**\n\nWhen the workspace stops, Terraform runs again. At that point `coder_agent.dev[0]` doesn't exist (empty tuple), so your `coder_script` referencing `coder_agent.dev[0].id` fails.\n\n**The fix:**\n\nAdding `count = data.coder_workspace.me.start_count` to your `coder_script` makes it conditional too:\n- Workspace starting → agent exists, script exists, reference works\n- Workspace stopping → agent doesn't exist, script doesn't exist, no reference error\n\nThis is the standard pattern in Coder templates - any resource that depends on the agent needs the same `count` to stay in sync.",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "\"coder terraform count issue\"",
+      "timestamp": "2026-01-19T02:05:06.773Z",
+      "threadId": "1458785695513444402",
+      "threadName": "Confusion around what \"count\" is doing in the context of coder_script"
+    },
+    {
+      "content": "I took the aws-linux template and added this startup script\n\n```\nresource \"coder_script\" \"every_5_minutes\" {\n  agent_id     = coder_agent.dev[0].id\n  display_name = \"Health check\"\n  icon         = \"/icon/heart.svg\"\n  cron         = \"0 */5 * * * *\" # Run every 5 minutes\n  script       = <<EOF\n    #!/bin/sh\n    echo \"Health check at $(date)\"\n  EOF\n  run_on_start = true\n}\n```\n\nThis got me:\n```\nError: Invalid index on main.tf line 136, in resource \"coder_script\" \"every_5_minutes\": 136: agent_id = coder_agent.dev[0].id ├──────────────── │ coder_agent.dev is empty tuple The given key does not identify an element in this collection value: the collection has no elements.\n```\n\nSo then I added in `count = data.coder_workspace.me.start_count` to the script, and that seemed to work. I'm confused as to what count even does though, as it's not in the documentation for `coder_script` anywhere (https://registry.terraform.io/providers/coder/coder/latest/docs/resources/script). \n\nCould I get get some pointers on where to find information on why `data.coder_workspace.me.start_count` is needed and what it actually does in the context of `coder_scripts`? My understanding is that it's 0 when the EC2 instance is terminating and 1 when it's starting (https://registry.terraform.io/providers/coder/coder/latest/docs/data-sources/workspace#start_count-1).",
+      "author": "swiftlynx",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "coder script issues",
+      "timestamp": "2026-01-19T02:05:09.700Z",
+      "threadId": "1458785695513444402",
+      "threadName": "Confusion around what \"count\" is doing in the context of coder_script"
+    },
+    {
+      "content": "Are these rules in your template?",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "template rules",
+      "timestamp": "2026-01-19T02:05:10.881Z",
+      "threadId": "1458768920482938881",
+      "threadName": "Security groups for coder instances created on AWS EC2"
+    },
+    {
+      "content": "Security groups for coder instances created on AWS EC2",
+      "author": "swiftlynx",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "\"coder instance security settings\"",
+      "timestamp": "2026-01-19T02:05:11.969Z",
+      "threadId": "1458768920482938881",
+      "threadName": "Security groups for coder instances created on AWS EC2"
+    },
+    {
+      "content": "To get coder to work, I needed to setup security rules with HTTP/HTTPs. As you can see in the screenshot, it's currently set to all ipv4 addresses can address my coder instances via http/https. \n\nA few questions:\n- These rules are for 0.0.0.0, meaning anyone can connect to our spawned EC2 instances via HTTPs/HTTP. For security reasons, could this be an issue? If so, would there be a way to only allow company laptops/PCs rather than any IP?",
+      "author": "swiftlynx",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "security rule configuration",
+      "timestamp": "2026-01-19T02:05:13.537Z",
+      "threadId": "1458768920482938881",
+      "threadName": "Security groups for coder instances created on AWS EC2"
+    },
+    {
+      "content": "I took a look at what ollama models we used to run integration tests with, and it looks like `gpt-oss:20b` was the only one. I'm not sure what other people on the team have tried, but it's also possible that we might be able to support those other models with alternative tool call formats. I'll look into it \n\nIn any case it's probably worth asking this in the the mux discord too: https://discord.gg/epMj44Kp",
+      "author": "ethanndickson",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "\"ollama model integration issues\"",
+      "timestamp": "2026-01-19T02:05:15.434Z",
+      "threadId": "1458168173403570267",
+      "threadName": "What Ollama models are good to use with Mux for editing files?"
+    },
+    {
+      "content": "I run Ollama on an NVIDIA DGX Spark workstation for local inferencing with port forwarding, and the IBM Granite 4 and Qwen3 Coder models work well for file editing when configured with my Zen editor, but when I try the same with Mux I'm able to get normal model responses but with seemingly no ability to edit files. The AI in the Mux documentation site says:\n\n```\nmux does support file editing through tools like file_edit_replace_string, file_edit_insert, file_read, and bash. However, tool calling capability depends on the model itself, not just mux.\n\nThe issue with your local Ollama models (IBM Granite4, Qwen3-coder) is likely that these models may not reliably support the tool/function calling format that mux uses. mux is built on the Vercel AI SDK and provides tools to models, but the model must properly understand and invoke those tools.\n\nThe limitation: Not all local models handle tool calling well. mux's documentation notes that \"different models react very differently to the same set of tools and instructions.\" Some smaller or less capable models may struggle with structured tool use.\n\nYou might try models known for better tool calling support, or check if your Ollama models have specific tool-calling variants.\n```\n\nSince I know this works in Zed, are there other suggested models to try? Trying to shortcut the list since there are so many models and it takes time to download them all to the Spark. Thanks.",
+      "author": "reneonguitar",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "mux file editing issues",
+      "timestamp": "2026-01-19T02:05:18.197Z",
+      "threadId": "1458168173403570267",
+      "threadName": "What Ollama models are good to use with Mux for editing files?"
+    },
+    {
+      "content": "After looking around I see this is the same as this GitHub issue:\nhttps://github.com/coder/coder/issues/20837",
+      "author": "ayy_jimbo",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "coder issue 20837",
+      "timestamp": "2026-01-19T02:05:19.646Z",
+      "threadId": "1457451808904446094",
+      "threadName": "How to pass workspace parameters to coder tasks at prompt?"
+    },
+    {
+      "content": "<@1412544421777637376>",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "unknown issue",
+      "timestamp": "2026-01-19T02:05:20.622Z",
+      "threadId": "1457451808904446094",
+      "threadName": "How to pass workspace parameters to coder tasks at prompt?"
+    },
+    {
+      "content": "The docker example for coder tasks has the git repo URL hardcoded in the template. I have existing workspace templates that I'm converting to coder task templates, but the task section of the web UI does not expose any of the input parameters of the workspace, most importantly a \"git repo URL\" parameter. This lets the workspace clone the relevant git repo to work with at startup.\n\nWithout this, I would have to make a new coder task template for every git repo I want to work with in tasks. Is there something I'm missing, or this is how the tasks feature works at this time?\n\nSome \"workarounds\" I've thought of:\n\n1. Include an instruction in the prompt to clone the git repo as the first step. This relies on the LLM correctly parsing and executing the git clone command before starting work, and is less deterministic.\n\n2. Hack this by using a regex in the terraform template to extract the git repo URL from the prompt (like looking for a pattern such as `coder_parameter_git_repo_url: https://...` inside the prompt text and establishing a terraform local value for use within the template, like for doing `git clone` within the workspace startup script.\n\nWhat is the recommended way to re-use a coder task template across git repositories?\n\nRunning coder version: v2.29.1+59cdd7e",
+      "author": "ayy_jimbo",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "coder task template reuse",
+      "timestamp": "2026-01-19T02:05:23.230Z",
+      "threadId": "1457451808904446094",
+      "threadName": "How to pass workspace parameters to coder tasks at prompt?"
+    },
+    {
+      "content": "Any ideas why Coder related tabs crash when my mac goes to sleep?",
+      "author": "tate.sh",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "coder tab crashes",
+      "timestamp": "2026-01-19T02:05:24.619Z",
+      "threadId": "1456183882985635861",
+      "threadName": "Coder Tab Crashed in Chrome on macOS when sleep"
+    },
+    {
+      "content": "Thanks for sharing your findings <@151532281025134592>, when I've got time I'll take a deeper dive into this 👍",
+      "author": "this.danielle",
+      "channel": "help",
+      "topic": "praise",
+      "helpTopic": "sharing findings",
+      "timestamp": "2026-01-19T02:05:25.885Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "thanks, done. I found a workaround which I have also posted, but I am not sure how reliable it is.",
+      "author": "aericio",
+      "channel": "help",
+      "topic": "support-request",
+      "helpTopic": "workaround reliability concerns",
+      "timestamp": "2026-01-19T02:05:27.001Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "FYI <@662291749280153602>",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "unknown issue mentioned",
+      "timestamp": "2026-01-19T02:05:28.053Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "Looks like its similar to https://github.com/coder/coder/issues/21109\nCan you please add your observation to the issue",
+      "author": "matifali",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "coder setup issues",
+      "timestamp": "2026-01-19T02:05:29.179Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "also just fine in code-server actually, so just something with vscode?",
+      "author": "aericio",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "vs code issues",
+      "timestamp": "2026-01-19T02:05:30.203Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "I noticed that environment variables and the coder binary aren't being passed into Dev Containers when opened via VS Code, even though they work fine when connecting via the web terminal. So when I'm trying to push to Git via SSH, it's not working b/c the coder ssh env isn't showing up. The parent container is fine (when connected via either vscode or terminal).\n\nI'm using the example DinD template and tested on main coder/coder repo. Is this supposed to be intentional? \n\nFirst 2 images are from web terminal, last image is from vscode desktop",
+      "author": "aericio",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "dev container environment variables",
+      "timestamp": "2026-01-19T02:05:31.856Z",
+      "threadId": "1455729593372901502",
+      "threadName": "Docker-in-Docker devcontainers issue with VSCode"
+    },
+    {
+      "content": "but please don't misunderstand; this is in no way a reasonable thing to try to do, and I have no illusions about that :-P",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "reasonable expectations vs reality",
+      "timestamp": "2026-01-19T02:05:33.344Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "if it were fundamnetally insufficient to do anything with I wouldn't bother even trying, it's just *so close* to being useful, and it's only not useful because apple places so many restrictions on what you can do. if you could run macos on this ipad it would be a completely usable dev machine by itself",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "feature-request",
+      "helpTopic": "ipads as development machines",
+      "timestamp": "2026-01-19T02:05:34.776Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "and it's *almost* fully usable when paired with something like coder. I'd rather be able to run it all locally, but ... again, the point is to see what can be done, not that I actually think this is the best way to work. when I'm really working I use my mac and run everything locally",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "local coding setup options",
+      "timestamp": "2026-01-19T02:05:36.176Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "like I said - it's more the challenge of \"can this be done\". with the \"magic keyboard\" it's almost as good as my mac laptop keyboard/trackpad as far as usability goes, so if it had real software it wouldn't be bad to work on",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "magic keyboard usability concerns",
+      "timestamp": "2026-01-19T02:05:37.511Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "I cannot argue that point :P",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "general-discussion",
+      "helpTopic": "argument discussion",
+      "timestamp": "2026-01-19T02:05:38.516Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "There is an app blink that has a good code server client that I usually use, but it still has issues and there are more issues using it directly from Safari",
+      "author": "taxilian",
+      "channel": "help",
+      "topic": "bug-report",
+      "helpTopic": "code server client issues",
+      "timestamp": "2026-01-19T02:05:39.686Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "Yeah, but programming on an iPad is crippling in and of itself, is it not?",
+      "author": "smolinari",
+      "channel": "help",
+      "topic": "question",
+      "helpTopic": "programming on ipad limitations",
+      "timestamp": "2026-01-19T02:05:40.740Z",
+      "threadId": "1453481975934619820",
+      "threadName": "Does anyone know of a simple way to make it possible to ssh into a workspace using termius?"
+    },
+    {
+      "content": "Is it possible to have multiple agents talking to agent-api at the same time? Either one agent-api instance per agent or one agent-api instance shared between multiple agents? Can the coder application handle this?\n\nThere's no module for doing something like this, but if i built one, would it work or is it completely impossible due to assumptions on the coder side?",
+      "author": "theliminator",
+      "channel": "ai",
+      "topic": "feature-request",
+      "timestamp": "2026-01-22T20:54:49.467Z",
+      "messageId": "1464000362703884440",
+      "channelId": "1350597131995713586"
+    },
+    {
+      "content": "Is there a good pattern for your templates to auto-generate a new version whenever your template changes?",
+      "author": "theliminator",
+      "channel": "general",
+      "topic": "question",
+      "timestamp": "2026-01-22T20:55:54.471Z",
+      "messageId": "1464000646931021825",
+      "channelId": "971231372373033030"
+    },
+    {
+      "content": "Greeting, everyone!\n\nI’m an AI + Full Stack Engineer focused on building production-grade AI systems for healthcare, covering clinical NLP, lab/blood work workflows, medical imaging, and patient-facing AI applications.\nI also build LLM systems, autonomous agents, workflow automation, and multimodal AI (text · voice · vision).\n\nCore Skills :\n• Healthcare AI pipelines: document/PDF extraction + OCR, normalization, reference-range flagging, longitudinal trend analysis\n• Clinical NLP: NER + linking, terminology mapping (SNOMED-CT/UMLS, LOINC-ready workflows), structured signal extraction from notes\n• Medical imaging AI: preprocessing transforms, training/inference pipelines, evaluation workflows, generative imaging experiments\n• LLM systems for healthcare: orchestration (ReAct-style tool use), safety guardrails, grounded generation, traceable reasoning and outputs\n• Agentic AI systems: multi-agent workflows, tool calling, memory, human-in-the-loop review, production chatbots/copilots\n• RAG + knowledge systems: vector DBs, hybrid search, clinical knowledge bases/biomarker catalogs, custom retrievers\n• Full-stack delivery: React/Next.js, FastAPI/NestJS, secure APIs, role-based access, production deployment patterns\n• Automation & integrations: workflow orchestration, webhook-based integrations, data validation, monitoring and observability (n8n, Zapier, Make, GoHighLevel, custom APIs)\n\nIf you’re building AI production systems or an AI + healthcare product and need someone who can ship reliable systems, I’m happy to connect with you.",
+      "author": "ai.health",
+      "channel": "ai",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-22T21:50:55.961Z",
+      "messageId": "1464014478633992316",
+      "channelId": "1350597131995713586"
+    },
+    {
+      "content": "Hi everyone!\nI am a full stack and AI developer, can build web, desktop or mobile app that related AI.\nwould like to connect with someone who working on own project as founder or project manager.\nIf you are, please hit me.",
+      "author": "cheer_up1",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-22T22:40:03.139Z",
+      "messageId": "1464026844876767356",
+      "channelId": "971231372373033030"
+    },
+    {
+      "content": "Hi everyone!\nI am a full stack and AI developer, can build web, desktop or mobile app that related AI.\nwould like to connect with someone who working on own project as founder or project manager.\nIf you are, please hit me.",
+      "author": "cheer_up1",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-22T22:40:52.895Z",
+      "messageId": "1464027064821878947",
+      "channelId": "971231372373033030"
+    },
+    {
+      "content": "Hi everyone!",
+      "author": "marco_community_manager",
+      "channel": "general",
+      "topic": "general-discussion",
+      "timestamp": "2026-01-22T22:54:08.616Z",
+      "messageId": "1464030391844208645",
+      "channelId": "971231372373033030"
+    }
+  ]
+}

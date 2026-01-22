@@ -2,10 +2,12 @@ import { config } from 'dotenv';
 config({ path: '.env.local' });
 
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import { OLLAMA_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
+import { ANTHROPIC_CONFIG, COMMUNITY_RESPONSE_PROMPT } from "./models";
 import { WebClient } from "@slack/web-api";
 import { SocketModeClient } from "@slack/socket-mode";
 import { getChannelConfig, getChannels } from "./channels";
+import { createAnthropic } from '@ai-sdk/anthropic';
+import { generateText } from 'ai';
 import { 
   classifyMessage, 
   recordMessage, 
@@ -23,6 +25,11 @@ import {
   formatWeeklyRollupForSlack,
   type TrackedMessage
 } from "./analytics";
+
+// Initialize Anthropic client
+const anthropic = createAnthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
 
 // Discord client
 const discordClient = new Client({
@@ -48,26 +55,20 @@ let slackBotUserId: string | null = null;
 // Slack channel for intro notifications
 const SLACK_INTRO_CHANNEL = process.env.SLACK_INTRO_CHANNEL;
 
-// AI-powered response generator using Ollama
+// AI-powered response generator using Anthropic Claude
 async function generateResponse(message: string): Promise<string | null> {
   try {
     const prompt = COMMUNITY_RESPONSE_PROMPT.replace('{message}', message);
-    const response = await fetch(`${OLLAMA_CONFIG.baseUrl}/api/generate`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: OLLAMA_CONFIG.model,
-        prompt,
-        stream: false,
-      }),
+    
+    const { text } = await generateText({
+      model: anthropic(ANTHROPIC_CONFIG.model),
+      prompt,
+      maxTokens: 256,
     });
 
-    const data = await response.json() as { response: string };
-    return data.response.trim() || null;
+    return text.trim() || null;
   } catch (error) {
-    console.error("Ollama error:", error);
+    console.error("Anthropic error:", error);
     return null;
   }
 }
@@ -103,7 +104,7 @@ async function handleSlackMessage(event: any): Promise<void> {
   
   if (!messageText) return;
   
-  console.log(`\n💬 Slack message from user: "${messageText}"`);
+  console.log(`\n💬 Slack message from user: "${messageText}}"`);
   
   const lowerMessage = messageText.toLowerCase();
   const userId = event.user || event.channel;
@@ -185,7 +186,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
     const discordUrl = `https://discord.com/channels/${message.guildId}/${message.channelId}/${message.id}`;
 
     // Try to generate AI response
-    console.log("\n🤖 Generating AI response with Ollama...");
+    console.log("\n🤖 Generating AI response with Claude...");
     const aiResponse = await generateResponse(message.content);
 
     let suggestedResponse = "";
@@ -301,7 +302,7 @@ discordClient.on(Events.MessageCreate, async (message) => {
       elements: [
         {
           type: "mrkdwn",
-          text: `Message ID: ${message.id}${hasAiSuggestion ? " | AI Generated (Ollama)" : ""}`,
+          text: `Message ID: ${message.id}${hasAiSuggestion ? " | AI Generated (Claude)" : ""}`,
         },
       ],
     });
@@ -899,7 +900,7 @@ async function sendWeeklyRollup(): Promise<void> {
 
 (async () => {
   console.log("🚀 Starting Discord Community Agent V2...");
-  console.log("   Using Ollama for AI responses (local & private)");
+  console.log("   Using Anthropic Claude for AI responses");
   
   // Load persisted analytics data
   loadPersistedData();
