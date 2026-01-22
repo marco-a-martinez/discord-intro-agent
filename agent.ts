@@ -21,7 +21,7 @@ import {
   getAllMessages,
   getMessagesForRollup,
   formatWeeklyRollupForSlack,
-  TrackedMessage
+  type TrackedMessage
 } from "./analytics";
 
 // Discord client
