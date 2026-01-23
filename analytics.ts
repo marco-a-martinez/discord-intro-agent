@@ -4,6 +4,7 @@ import { generateText } from 'ai';
 
 // Initialize Anthropic client
 const anthropic = createAnthropic({
+  baseURL: 'https://api.anthropic.com/v1',
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
